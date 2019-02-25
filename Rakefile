@@ -15,12 +15,6 @@ task :sasswatch do
 	system 'sass -r sass-globbing --watch sass/style.scss:style.css --style compressed'
 end
 
-desc 'Update'
-task :update do
-	system 'npm update'
-system 'cp node_modules/css-polyfills/bin/css-polyfills.min.js js/modules'
-end
-
 desc 'Serve'
 task :serve do
 	threads = []
