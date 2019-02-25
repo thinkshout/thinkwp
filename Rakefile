@@ -7,12 +7,12 @@ end
 # Change basetheme.dev to your site path
 desc 'Running Browsersync'
 task :browsersync do
-	system 'browser-sync start --proxy "web.toind.localhost" --files "css/*.css, js/*.js" --no-inject-changes'
+	system 'browser-sync start --proxy "web.toind.localhost" --files "*.css, js/*.js" --no-inject-changes'
 end
 
 desc 'Watch sass'
 task :sasswatch do
-	system 'bundle exec sass -r sass-globbing --watch sass:css'
+	system 'sass -r sass-globbing --watch sass/style.scss:style.css --style compressed'
 end
 
 desc 'Update'
