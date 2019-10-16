@@ -17,29 +17,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-    <script>
-	    if(navigator.userAgent.indexOf('MSIE')!==-1
-		    || navigator.appVersion.indexOf('Trident/') > -1){
-	    	    var script = document.createElement('script');
-	    	    script.type = 'text/javascript';
-			    script.src = '/wp-content/themes/thinkwp/js/lib/css-polyfills.min.js';
-			    document.getElementsByTagName('head')[0].appendChild(script);
-	    }
-    </script>
-
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-
-<!-- 12-Grid Layout Checker -->
-<?php
-if ( get_query_var('show-grid' ) ) {
-  get_template_part( 'template-parts/ts-custom/ts-grid' );
-}
-?>
-<!-- END 12-Grid Layout Checker -->
-
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'thinkwp' ); ?></a>
 

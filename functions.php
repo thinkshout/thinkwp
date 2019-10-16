@@ -159,11 +159,3 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-/**
- * Adds a URL query (?show-grid) that makes the theming grid guide visible.
- */
-add_filter('query_vars', 'add_grid_query');
-function add_grid_query($public_query_vars) {
-  $public_query_vars[] = 'show-grid';
-  return $public_query_vars;
-}
