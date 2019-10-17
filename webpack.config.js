@@ -2,6 +2,7 @@ const globImporter = require("node-sass-glob-importer");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
+require('dotenv').config({ path: path.resolve(process.cwd(), '../../../../.env') });
 
 module.exports = (env, argv) => {
 	const isDevMode = argv.mode === "development";
@@ -64,7 +65,7 @@ module.exports = (env, argv) => {
 			new BrowserSyncPlugin({
 				host: "localhost",
 				port: 3000,
-				proxy: "http://web.evaluatingpriorities.localhost/"
+				proxy: process.env.WP_HOME
 			})
 		]
 	};
