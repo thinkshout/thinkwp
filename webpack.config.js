@@ -2,7 +2,7 @@ const globImporter = require("node-sass-glob-importer");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
-require('dotenv').config({ path: path.resolve(process.cwd(), '../../../../.env') });
+require('dotenv').config({ path: require('find-config')('.env') });
 
 module.exports = (env, argv) => {
 	const isDevMode = argv.mode === "development";
