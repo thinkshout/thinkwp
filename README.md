@@ -2,7 +2,8 @@
 
 Contributors: ThinkShout Inc., Automattic
 
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: custom-background, custom-logo, custom-menu, featured-images,
+threaded-comments, translation-ready
 
 - Requires at least: 4.5
 - Tested up to: 4.8
@@ -14,12 +15,24 @@ A starter theme called thinkwp.
 
 ## Description
 
-A starter theme for Wordpress site builds.
+A starter theme for Wordpress site builds that uses Webpack.
+
+## Making a copy
+
+To copy and rename this theme, run the following:
+
+```bash
+cd <your WP theme directory>
+git clone git@github.com:thinkshout/thinkwp.git my_theme_name
+cd my_theme_name
+./update_theme_name.sh my_theme_name
+```
 
 ## Installation
 
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
+2. Click Upload Theme and Choose File, then select the theme's .zip file.
+Click Install Now.
 3. Click Activate to use your new theme right away.
 
 ## Development
@@ -52,5 +65,7 @@ npm run build:dev
 
 ## Credits
 
-- Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-- normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+- Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.,
+[GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+- normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016
+Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
