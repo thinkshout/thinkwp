@@ -128,6 +128,11 @@ function thinkwp_scripts() {
 	wp_enqueue_style( 'thinkwp-styles', get_template_directory_uri() . "/$dir/main.css", [], '20151215' );
 	wp_enqueue_script( 'thinkwp-scripts', get_template_directory_uri() . "/$dir/main.min.js", ['jquery'], '20151215', true );
 
+	wp_localize_script( 'thinkwp-scripts', 'thinkwp', array(
+		'themeBase' => get_theme_file_uri(),
+		'ajaxUrl'   => admin_url( 'admin-ajax.php' ),
+	) );
+	
 	wp_enqueue_script( 'thinkwp-navigation', get_template_directory_uri() . '/js/navigation.js', [], '20151215', true );
 
 	wp_enqueue_script( 'thinkwp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', [], '20151215', true );
