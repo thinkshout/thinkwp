@@ -58,10 +58,18 @@ npm run build
 npm run build:dev
 ```
 
-## Frequently Asked Questions
+## Code Sniffer
 
-- Does this theme support any plugins?
-  thinkwp includes support for Infinite Scroll in Jetpack.
+- Add to composer.json (replace thinkwp with the name of your theme):
+
+```
+"code-sniff": [
+  "./vendor/bin/phpcs --standard=WordPress ./web/wp-content/plugins/custom",
+  "./vendor/bin/phpcs --standard=./web/wp-content/themes/custom/thinkwp/phpcs.xml ./web/wp-content/themes/custom/thinkwp"
+],
+```
+
+- Run: `composer run-script code-sniff`
 
 ## Credits
 
