@@ -1,0 +1,116 @@
+.post-hero,
+.event-hero,
+.project-hero {
+  h1 {
+    margin: rem(14) 0 rem(16);
+    @include mq($md) {
+      margin: rem(16) 0 rem(39);
+    }
+  }
+  figure {
+    img {
+      width: 100%;
+    }
+  }
+  figcaption {
+    margin-top: rem(8);
+    color: $dark-grey;
+    @include font-line-height(14, 17);
+    @include mq($md) {
+      @include font-line-height(14, 30);
+    }
+  }
+}
+.page-hero {
+  position: relative;
+  h1 {
+    color: $off-white;
+    position: relative;
+    top: 50%;
+    transform: translateY(-100%);
+  }
+  &__title {
+    background-color: transparentize($black, 0.55);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  &__no-image {
+    .page-hero__title {
+      position: relative;
+      width: auto;
+      height: auto;
+      background-color: transparent;
+      h1 {
+        top: 0;
+        transform: none;
+      }
+    }
+  }
+  &__image {
+    height: rem(460px);
+    @include bg_image_setup;
+    figure {
+      @include visually-hidden;
+    }
+  }
+  &.home__hero {
+    .page-hero__title {
+      background-image: linear-gradient(
+        to top,
+        $black 0%,
+        transparent 50%,
+        transparent 100%
+      );
+      background-color: transparent;
+      @include mq($md) {
+        background-color: transparentize($black, 0.65);
+        background-image: none;
+      }
+      padding: 0 rem(14);
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      h1 {
+        max-width: 800px;
+        top: 0;
+        transform: none;
+        margin-bottom: rem(40);
+        @include font-line-height(34, 40);
+        @include mq($md) {
+          @include font-line-height(80, 80);
+          margin-bottom: rem(90);
+        }
+      }
+    }
+    .page-hero__image {
+      height: 100vw;
+      @include mq($md) {
+        height: rem(600px);
+      }
+    }
+  }
+}
+
+.archive-hero,
+.page-hero__no-image {
+  background-color: $disco-pine-light;
+  height: rem(263px);
+  &__title,
+  .page-hero__title {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+  }
+  .page-hero__content {
+    height: 100%;
+  }
+  h1 {
+    color: $off-white;
+    margin: 0 0 rem(40);
+  }
+}

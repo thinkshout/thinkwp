@@ -1,0 +1,50 @@
+html {
+  background-color: $light-grey;
+}
+
+body {
+  background-color: $white;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $site-max-width;
+  position: relative;
+}
+
+.entry-content {
+  position: relative;
+}
+
+.spacer {
+  flex-grow: 1 !important;
+}
+
+// Sets the limitations of the full site container. Do not set if you want an
+// element to stretch the full width of the site.
+.container {
+  margin: 0 auto;
+  max-width: $grid-max-width + ($grid-gutter * 2);
+
+  @include mq($xxl) {
+    max-width: $grid-max-width-xxl + ($grid-gutter * 2);
+  }
+  &--inner {
+    max-width: rem($inner-container-width);
+    margin: 0px auto;
+    padding: rem(33px) rem(23px);
+  }
+  &--content {
+    box-sizing: border-box;
+    margin: 0px auto;
+    padding: rem(33);
+    @include mq($xl) {
+      padding: rem(33px) rem(135px);
+    }
+  }
+}
+
+// Creates side padding so content always stays within the grid and doesn't
+// touch the sides on mobile devices.
+.content-side-padding {
+  padding-left: $grid-gutter;
+  padding-right: $grid-gutter;
+}

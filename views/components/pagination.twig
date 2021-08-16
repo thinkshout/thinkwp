@@ -1,0 +1,30 @@
+{% if post.post_type == 'page' and post.pagination.pages %}
+  <div class="page-links">
+    {{ __('Pages:', 'thinkwp') }}
+    {% if post.pagination.prev %}
+      <a href="{{ post.pagination.prev.link }}"
+        class="prev {{ post.pagination.prev.link|length ? '' : 'invisible' }}">
+        Prev
+      </a>
+    {% endif %}
+    <ul class="post">
+      {% for page in post.pagination.pages %}
+        <li>
+          {% if page.link %}
+            <a href="{{ page.link }}" class="{{ page.class }}">
+              {{ page.title }}
+            </a>
+          {% else %}
+            <span class="{{ page.class }}">{{ page.title }}</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    {% if post.pagination.next %}
+      <a href="{{ post.pagination.next.link }}"
+        class="next {{ post.pagination.next.link|length ? '' : 'invisible' }}">
+        Next
+      </a>
+    {% endif %}
+  </div>
+{% endif %}

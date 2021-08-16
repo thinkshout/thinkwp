@@ -1,0 +1,13 @@
+<span class="posted-on">
+  <time class="entry-date published"
+    datetime="{{ function('get_the_date', 'DATE_W3C') }}">
+    {{ function('get_the_date') }}
+  </time>
+  {% if
+    function('get_the_time', 'U') != function('get_the_modified_time', 'U') %}
+    <time class="updated"
+      datetime="{{ function('get_the_modified_date', 'DATE_W3C') }}">
+      {{ function('get_the_modified_date') }}
+    </time>
+  {% endif %}
+</span>

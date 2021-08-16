@@ -1,0 +1,112 @@
+// Headers
+h1,
+h2,
+h3,
+h4,
+h5,
+.wp-block.editor-post-title {
+  @include font($header-font, "bold");
+}
+
+// Body Content
+figure {
+  margin: 0px;
+}
+
+label {
+  @include font($header-font, "bold");
+  &.over-dark {
+    color: $white;
+  }
+}
+
+p,
+blockquote,
+figure,
+ul,
+ol {
+  margin-bottom: rem(30px);
+  @include font($body-font, "regular");
+  &.over-dark {
+    color: $white;
+  }
+}
+
+ul,
+ol {
+  padding-inline-start: rem(20px);
+}
+
+// Post Tags
+.post-category-tag {
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+// Block Quotes
+.wp-block-quote,
+.blockquote {
+  font-style: italic;
+  position: relative;
+  padding-left: 1.5rem;
+  margin: rem(46px) 0px;
+  &.block-editor-block-list__block {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// Pull Quote
+.wp-block-pullquote,
+.pullquote {
+  padding: 0px;
+  border-top: none;
+  border-bottom: none;
+  @include font($header-font, "bold");
+  blockquote {
+    margin: 0px;
+  }
+}
+
+// Image Captions
+.wp-block-image {
+  figcaption {
+    margin: rem(21px) auto;
+    @include font($body-font);
+  }
+}
+
+// Links
+a {
+  font-family: inherit;
+  text-decoration: none;
+  &:visited {
+    text-decoration: underline;
+  }
+  @include hocus {
+    text-decoration: underline;
+  }
+  &.alternate-hocus {
+    text-decoration: underline;
+    @include hocus {
+      text-decoration: none;
+    }
+  }
+}
+
+// Alignments
+.wp-block[data-align="left"],
+.wp-block[data-align="right"] {
+  height: auto;
+  blockquote {
+    max-width: 420px;
+  }
+}
+.wp-block[data-align="left"] > *,
+.alignleft {
+  float: none;
+  display: block;
+  text-align: left;
+  margin: 0px;
+  max-width: none;
+}

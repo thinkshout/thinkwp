@@ -1,0 +1,17 @@
+<aside class="singular-sidebar {{ post.type }}-sidebar">
+  <div class="singular-sidebar__content">
+    <div class="singular-sidebar__section {{ post.type }}-sidebar__author">
+      {% include 'components/posted-by.twig' with {
+        avatar: true
+      } %}
+      {% include 'components/posted-on.twig' %}
+    </div>
+    <div class="singular-sidebar__share">
+      <p class="meta-label">
+        Share
+      </p>
+      {% include 'components/social-share-buttons.twig' %}
+    </div>
+  </div>
+</aside>
+<!-- .{{post.type}}-sidebar -->

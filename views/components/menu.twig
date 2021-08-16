@@ -1,0 +1,22 @@
+<ul class="{% if not submenu %}menu{% elseif submenu %}sub-menu dropdown-menu{% endif %}"{% if drop_down_id %} id="dd_{{drop_down_id}}" {% else %} id="{{menu.slug}}" {% endif %}>
+  {% if submenu %}
+  {% for item in menu %}
+  <li class="menu-item {{item.classes | join(' ')}}">
+    <a href="{{item.get_link}}"{% if item._menu_item_target %} target="{{item._menu_item_target}}"{% endif %} class="menu-link">{{item.title}}</a>
+  </li>
+  {% endfor %}
+  {% else %}
+  {% for item in menu.items %}
+    <li class="menu-item {{item.classes | join(' ')}}">
+      {% if item.get_children %}
+      <a href="{{item.get_link}}" class="dropdown-button menu-link" data-activates="#dd_{{item.title|lower|replace({' ' : '-'})}}">{{item.title}}</a>
+      {% include "components/menu.twig" with {'menu': item.get_children, 'submenu': true, 'drop_down_id': item.title|lower|replace({' ' : '-'})} %}
+      {% else %}
+      <a href="{{item.get_link}}"{% if item._menu_item_target %} target="{{item._menu_item_target}}"{% endif %} class="menu-link">{{item.title}}</a>
+      {% endif %}
+    </li>
+  {% endfor %}
+  {% block last_menu_item %}
+  {% endblock %}
+  {% endif %}
+</ul>

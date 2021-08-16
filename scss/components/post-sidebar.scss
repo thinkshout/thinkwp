@@ -1,0 +1,29 @@
+.singular-sidebar {
+  width: rem($inner-container-width);
+  margin: 0 auto;
+  &__content {
+    margin: 0;
+  }
+  @include mq(1374px) {
+    margin: 0;
+    width: auto;
+  }
+  .meta-label {
+    margin: 0 0 rem(2);
+  }
+  &__section {
+    margin-bottom: rem(36);
+  }
+  &__author {
+    .byline {
+      display: block;
+      &__avatar {
+        display: block;
+        margin-bottom: rem(6);
+      }
+    }
+    .posted-on {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{% if post.type == 'post' %}
+{% for category in post.categories %}
+{% if not category.parent %}
+<span class="post-category-tag {{category.slug}}__tag">{{category.name}}</span>
+{% endif %}
+{% endfor %}
+{% else %}
+<span class="post-category-tag {{post.type}}__tag">{{post.type}}</span>
+{% endif %}

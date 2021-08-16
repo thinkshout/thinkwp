@@ -1,0 +1,41 @@
+.social-share {
+  margin-top: rem(10);
+  &__menu {
+    display: flex;
+  }
+  &__item {
+    flex-grow: 1;
+    margin: 0 rem(10) 0 0;
+    a.social-share__link {
+      padding: rem(9) 0;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      color: $white;
+      box-shadow: none;
+      transition: background-color 0.2s ease;
+      border-radius: 2px;
+      &:visited {
+        color: $white;
+      }
+      &:before {
+        content: none;
+      }
+    }
+  }
+  &__facebook {
+    .social-share__link {
+      background-color: $facebook-blue;
+    }
+  }
+  &__twitter {
+    .social-share__link {
+      background-color: $twitter-blue;
+    }
+  }
+  &__linkedin {
+    .social-share__link {
+      background-color: $linkedin-blue;
+    }
+  }
+}

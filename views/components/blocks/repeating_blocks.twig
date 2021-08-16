@@ -1,0 +1,22 @@
+<div class="repeating-blocks">
+  <div class="container--content">
+    {% for repeating_block in flexible_block.blocks %}
+    <div class="repeating-blocks__block{% if not repeating_block.block_image %} repeating-blocks__block--no-image{% endif %}">
+      <div class="flex-grid">
+        <div class="grid-1of1 grid-1of3--lg{% if loop.index is even %} grid-push-2of3--lg{% endif %}">
+          <div class="repeating-blocks__image">
+            <img src="{{ repeating_block.block_image.url }}" alt="{{ repeating_block.block_image.alt }}" />
+          </div>
+        </div>
+        <div class="grid-1of1 grid-2of3--lg{% if loop.index is even %} grid-pull-1of3--lg{% endif %}">
+          <div class="repeating-blocks__content">
+            <h2>{{ repeating_block.block_title }}</h2>
+            <p>{{ repeating_block.block_text }}</p>
+            {% include 'components/link.twig' with { link: repeating_block.block_link, link_classes: 'btn no-texture' } %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

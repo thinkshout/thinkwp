@@ -1,0 +1,10 @@
+<div class="flexible-content">
+  {% for flexible_block in post.meta('flexible_content') %}
+    <section class="flexible-content__section flexible-content__section--{{
+      flexible_block.acf_fc_layout
+      }}">
+      {% include 'components/blocks/' ~ flexible_block.acf_fc_layout
+        ~ '.twig' %}
+    </section>
+  {% endfor %}
+</div>

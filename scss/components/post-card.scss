@@ -1,0 +1,23 @@
+.post-card {
+  a {
+    text-decoration: none;
+  }
+  h3 {
+    margin-top: 0;
+    margin-bottom: rem(15);
+  }
+  &__image {
+    @include bg_image_setup;
+    img {
+      @include visually-hidden;
+    }
+  }
+  &__excerpt {
+    margin-top: rem(-2);
+  }
+  @include hocus {
+    h3 {
+      text-decoration: underline;
+    }
+  }
+}

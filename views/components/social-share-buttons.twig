@@ -1,0 +1,24 @@
+<div class="social-share">
+  <nav class="social-share__nav">
+    <ul class="menu social-share__menu">
+      <li class="menu__item social-share__item social-share__facebook">
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{post.link|url_encode}}" target="_blank" class="btn reset social-share__link" tabindex="0" role="button">
+          <i class="fab fa-facebook-f"></i>
+          <span class="screen-reader-text">Share post on Facebook</span>
+        </a>
+      </li>
+      <li class="menu__item social-share__item social-share__twitter">
+        <a href="https://twitter.com/intent/tweet?url={{post.link|url_encode}}&text=Read%20about%20{{post.title|url_encode}}" target="_blank" class="btn reset social-share__link" tabindex="0" role="button">
+          <i class="fab fa-twitter"></i>
+          <span class="screen-reader-text">Share on Twitter</span>
+        </a>
+      </li>
+      <li class="menu__item social-share__item social-share__linkedin">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{post.link|url_encode}}" target="_blank" class="btn reset social-share__link" tabindex="0" role="button">
+          <i class="fab fa-linkedin"></i>
+          <span class="screen-reader-text">Share post On LinkedIn</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

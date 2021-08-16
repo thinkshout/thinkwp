@@ -1,0 +1,16 @@
+<span class="byline">
+  {% if avatar %}
+    <span class="byline__avatar">
+      {% if post.author.headshot %}
+        {% include 'components/avatar.twig' with {
+          image: Image(post.author.headshot)
+        } %}
+      {% endif %}
+    </span>
+  {% endif %}
+  <span class="byline__author">
+    <a class="url archive-link" href="{{ post.author.link }}">
+      {{ post.author.name }}
+    </a>
+  </span>
+</span>

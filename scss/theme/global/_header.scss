@@ -1,0 +1,196 @@
+/* Global Header Nav styles go here */
+.site-header {
+  padding: rem(14px) rem(20px);
+  position: relative;
+  z-index: 50;
+  .main-navigation {
+    display: flex;
+    flex-direction: row;
+    .menu-toggle {
+      display: block;
+      padding-top: rem(5px);
+      @include mq($lg) {
+        display: none;
+      }
+    }
+    .menu {
+      display: none;
+      .menu-link {
+        color: $white;
+        display: block;
+        text-decoration: none;
+        transition: color 0.25s ease;
+        cursor: pointer;
+        padding: rem(15px) 0;
+        @include font($body-font, "bold");
+        @include mq($lg) {
+          padding: 0 0;
+        }
+      }
+      .menu-item {
+        &:not(.menu-item-has-children) {
+          &:nth-last-child(2),
+          &:nth-last-child(3) {
+            .menu-link {
+              @include font($body-font, "regular");
+            }
+          }
+        }
+        &.menu-item-has-children {
+          position: relative;
+          > .menu-link {
+            &:after {
+              content: url($theme_url+"/assets/svg/MenuChevron.svg");
+              display: inline-block;
+              width: rem(10px);
+              position: relative;
+              top: rem(-1px);
+              margin-left: rem(5px);
+              transform: rotate(0deg);
+              transition: transform 0.25s ease;
+            }
+          }
+        }
+        .sub-menu {
+          visibility: hidden;
+          opacity: 0;
+          max-height: 0;
+          transition: all 0.3s ease;
+          flex-direction: column;
+          min-width: 100%;
+          padding: 0;
+          z-index: 9;
+          > li {
+            padding: 0;
+            top: 0;
+            transform: none;
+            a {
+              display: block;
+              padding: rem(10) rem(16);
+              white-space: nowrap;
+              text-transform: none;
+              @include font($body-font, "regular");
+              &:after {
+                content: none;
+              }
+              @include hocus {
+                text-decoration: underline;
+              }
+            }
+          }
+          @include mq($lg) {
+            position: absolute;
+          }
+        }
+
+        &.menu-item-has-children:hover,
+        &.menu-item-has-children:focus-within,
+        &.menu-item-has-children > .sub-menu:hover {
+          > .sub-menu {
+            display: flex;
+            visibility: visible;
+            opacity: 1;
+            max-height: rem(1000);
+            padding: rem(10) 0 rem(16);
+          }
+        }
+      }
+      @include mq($lg) {
+        display: inline-block;
+        margin-left: rem(60);
+        .menu-item {
+          position: relative;
+        }
+        .menu-link {
+          @include font($body-font, "bold");
+          padding: rem(25) rem(10);
+          text-decoration: none;
+          transition: color 0.25s ease;
+          position: relative;
+        }
+      }
+      @include mq(1120) {
+        .menu-link {
+          padding: rem(25) rem(12.5);
+        }
+      }
+    }
+    &.toggled {
+      #header-menu {
+        display: block;
+        position: fixed;
+        display: block;
+        width: 100vw;
+        left: 0;
+        top: 69px;
+        height: calc(100vh - 69px);
+        padding: 0 rem(25);
+        z-index: 50;
+      }
+      .menu-item {
+        display: block;
+      }
+      .menu-toggle {
+        &__sandwich-layer {
+          left: 8px;
+          &:first-child {
+            transform: rotate(45deg) translateY(10px) translateX(1px);
+          }
+          &:nth-child(2) {
+            opacity: 0;
+            visibility: hidden;
+          }
+          &:nth-child(3) {
+            transform: rotate(-45deg) translateY(-10px) translateX(1px);
+          }
+        }
+      }
+    }
+  }
+  .site-branding {
+    width: rem(72px);
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    a {
+      position: absolute;
+      width: 100%;
+    }
+    @include mq($lg) {
+      width: rem(115px);
+    }
+  }
+  .menu-toggle {
+    margin-left: 13px;
+    position: relative;
+    &__sandwich-layer {
+      border-radius: 2px;
+      background-color: $black;
+      height: 3px;
+      left: 0;
+      top: 0;
+      width: 38px;
+      margin: 5px 0;
+      display: block;
+      position: relative;
+      transition: transform 0.25s ease, opacity 0.25s ease,
+        visibility 0.25s ease, background-color 0.25s ease, left 0.25s ease,
+        top 0.25s ease;
+    }
+    &:before {
+      content: none;
+    }
+  }
+  &.menu-toggled {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    .site-branding {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  @include mq($xl) {
+    padding: rem(23) rem(120);
+  }
+}

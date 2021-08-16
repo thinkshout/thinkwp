@@ -1,0 +1,121 @@
+/* Global Footer styles go here */
+.site-footer {
+  background-color: $disco-pine-medium;
+  @include mq($lg) {
+    padding: rem(88) 0 rem(20);
+  }
+  .footer-content {
+    &__logo {
+      width: rem(117px);
+      margin-bottom: rem(37);
+      @include mq($lg) {
+        width: rem(166px);
+      }
+    }
+    &__nav {
+      .menu {
+        .menu-link {
+          @include font($header-font, "bold");
+          @include font-line-height(22, 16);
+          color: $off-white;
+          text-decoration: none;
+          @include hocus {
+            color: $disco-fern;
+            text-decoration: underline;
+          }
+        }
+        .sub-menu {
+          .menu-item {
+            display: block;
+            margin: rem(10) 0;
+          }
+          .menu-link {
+            @include font($body-font, 500);
+            @include font-line-height(15, 21);
+          }
+        }
+        &#footer-column-1 {
+          margin-bottom: rem(37);
+        }
+        &#footer-column-2 {
+          margin-bottom: rem(46);
+          .menu-item {
+            display: block;
+            margin: 0 0 rem(28);
+          }
+        }
+      }
+      .footer-nav--social {
+        margin-bottom: rem(20);
+        .menu-link {
+          padding: 0 rem(30);
+        }
+        :first-child {
+          .menu-link {
+            padding-left: 0;
+          }
+        }
+      }
+      .footer-label {
+        @include font($header-font, "bold");
+        @include font-line-height(14, 16);
+        color: $off-white;
+        margin-bottom: rem(9);
+        @include mq($lg) {
+          @include font-line-height(22, 36);
+          margin: 0 0 rem(9);
+        }
+      }
+      &--social {
+        @include mq($lg) {
+          margin-left: rem(36);
+        }
+      }
+    }
+    &__copyright {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      p,
+      nav,
+      .menu-link {
+        display: inline-block;
+        color: $off-white;
+        margin-top: 0;
+        @include font($body-font, "regular");
+        @include font-line-height(14, 20);
+      }
+      .menu {
+        .menu-item {
+          display: inline-block;
+          margin: 0;
+          &:not(:last-child) {
+            &:after {
+              content: "|";
+              display: inline-block;
+              margin: 0 5px;
+              color: $off-white;
+              position: relative;
+              top: 2px;
+            }
+          }
+        }
+        .menu-link {
+          text-decoration: none;
+        }
+      }
+      @include mq($lg) {
+        justify-content: flex-end;
+        .spacer {
+          display: none;
+        }
+        p {
+          margin-right: rem(16);
+          margin-bottom: 0;
+          position: relative;
+          top: rem(6px);
+        }
+      }
+    }
+  }
+}

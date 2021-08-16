@@ -1,5 +1,6 @@
 .sass-cache/
 .DS_Store
 style.css.map
-node_modules
+node_modules/
 dist_dev
+vendor/

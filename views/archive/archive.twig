@@ -1,0 +1,10 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	{% include 'components/hero.twig'  %}
+	<div class="container--inner">
+	{% for post in posts %}
+	{% include 'components/post-preview.twig' %}
+	{% endfor %}
+	</div>
+{% endblock %}

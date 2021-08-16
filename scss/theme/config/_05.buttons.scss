@@ -1,0 +1,42 @@
+/**
+ * @file
+ * BUTTONS - global button styling.
+ */
+
+button,
+.button,
+.btn,
+.wp-block-button__link,
+button.button,
+button.btn,
+a.button,
+a.btn,
+input[type="submit"] {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: none;
+  text-decoration: none;
+  color: $white;
+  text-transform: uppercase;
+  z-index: 1;
+  @include font($body-font, "bold");
+  &:visited {
+    outline: auto;
+  }
+  &:disabled {
+    cursor: not-allowed;
+  }
+  @include hocus {
+    text-decoration: none;
+    color: $white;
+    &:before {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  &:visited {
+    color: $white;
+  }
+}

@@ -1,0 +1,15 @@
+figure,
+figure.wp-block-image.size-full {
+  img {
+    width: 100%;
+  }
+  figcaption {
+    margin-top: rem(8);
+    color: $dark-grey;
+    text-align: left;
+    @include font-line-height(14, 17);
+    @include mq($md) {
+      @include font-line-height(14, 30);
+    }
+  }
+}

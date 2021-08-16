@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+<!--[if IE 7]><html class="no-js ie ie7 lt-ie9 lt-ie8" {{site.language_attributes}}> <![endif]-->
+<!--[if IE 8]><html class="no-js ie ie8 lt-ie9" {{site.language_attributes}}> <![endif]-->
+
+  <head>{% include 'components/head.twig' %}</head>
+  <body class="{{body_class}} page-{{ post.slug }} theme-default {{post.post_type}}{% block extra_body_classes %}{% endblock %}" data-template="base.twig" id="post-{{post.slug}}">
+    {% include 'components/body-scripts.twig' %}
+    <a class="skip-link screen-reader-text" href="{{post.link}}#content">{{ __( 'Skip to content', 'thinkwp' ) }}</a>
+    {% include 'components/header.twig' %}
+    <div id="primary" class="content-area">
+      <main id="main" class="site-main">
+      {% block content %}{% endblock %}
+      </main>
+    </div>
+    {% include 'components/footer.twig' %}
+    {% include 'components/footer-scripts.twig' %}
+  </body>
+</html>

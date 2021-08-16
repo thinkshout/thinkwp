@@ -1,0 +1,11 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+  {% include 'components/hero.twig' %}
+  {% if post.content %}
+	{% include 'components/content/content-page.twig' %}
+  {% endif %}
+  {% if post.flexible_blocks %}
+	{% include 'components/flexible-content.twig' %}
+	{% endif %}
+{% endblock %}

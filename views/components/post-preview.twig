@@ -1,0 +1,24 @@
+<article class="singular-preview {{ post.type }}-preview"
+  id="{{ post.slug }}-preview">
+  <div class="flex-grid">
+    <div class="grid-1of3">
+      {% if post.hero_hero_image %}
+        <a href="{{ post.link }}">
+          <figure class="singular-preview__preview-image">
+            <img src="{{ Image(post.hero_hero_image).src }}"
+              alt="{{ Image(post.hero_hero_image).alt }}" />
+          </figure>
+        </a>
+      {% endif %}
+    </div>
+    <div class="grid-2of3">
+      {% include 'components/post-tag-link.twig' %}
+      <a href="{{ post.link }}">
+        <h2 class="post-title">
+          {{ post.title }}
+        </h2>
+      </a>
+      {% include 'components/posted-on.twig' %}
+    </div>
+  </div>
+</article>

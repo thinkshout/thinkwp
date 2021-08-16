@@ -8,52 +8,19 @@
  * E.g., it puts together the home page when no home.php file exists.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
  * @package thinkwp
+ * @subpackage  Timber
  */
 
-get_header();
-?>
+use Timber\Timber;
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+$context                 = Timber::get_context();
+$context['post']         = Timber::get_post();
+$context['posts']        = Timber::get_posts();
+$context['pagination']   = Timber::get_pagination();
+$context['categories']   = Timber::get_terms( 'category' );
+$context['is_archive']   = true;
+$context['archive_slug'] = str_replace( ' ', '-', strtolower( $context['wp_title'] ) );
 
-		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+$templates = array( 'archive/archive.twig' );
+Timber::render( $templates, $context );

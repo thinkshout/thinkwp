@@ -1,9 +1,7 @@
-// You can use ES6 syntax in this file!
-
-(($) => {
-
-	$(document).ready(() => {
-		console.log('Ready!');
-	});
-
+// IMPORTS GO HERE
+($ => {
+  $(document).ready(() => {
+    // BEGIN CUSTOM CODE GOES HERE
+    // END CUSTOM CODE GOES HERE
+  });
 })(jQuery);

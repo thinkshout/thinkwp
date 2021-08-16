@@ -1,0 +1,10 @@
+<a
+  href="{{link.url}}"
+  {% if link_id is not empty %} id="{{link_id}}"{% endif %}
+  {% if link_classes is not empty %} class="{{link_classes}}"{% endif %}
+  {% if link.target is not empty %} target="{{link.target}}"{% endif %}
+  {% if link_role is not empty %} role="{{link_role}}"{% endif %}
+  {% if link_tab_index is not empty %} tabindex="{{link_tab_index}}"{% endif %}
+>
+  {{link.title}}
+</a>

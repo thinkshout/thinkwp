@@ -1,0 +1,9 @@
+{% if post.type == 'post' %}
+{% for category in post.categories %}
+{% if not category.parent %}
+<a class="post-category-tag {{category.slug}}__tag" href="/category/{{category.slug}}/">{{category.name}}</a>
+{% endif %}
+{% endfor %}
+{% else %}
+<a class="post-category-tag {{post.type}}__tag" href="/{{post.type}}s/">{{post.type}}</a>
+{% endif %}

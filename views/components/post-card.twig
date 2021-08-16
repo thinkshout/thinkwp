@@ -1,0 +1,16 @@
+<div class="post-card post-card--{{post.type}}{% if card_classes %} {{card_classes}}{% endif %}">
+  <a href="{{post.link}}">
+    <div class="post-card__inner">
+      <div class="post-card__image-wrapper">
+        <div class="post-card__image" style="background-image: url({{Image(post.hero_hero_image).src}})">
+          <img src="{{ Image(post.hero_hero_image).src }}" alt="{{ Image(post.hero_hero_image).src }}">
+        </div>
+      </div>
+      <div class="post-card__content">
+        {% include "components/post-tag.twig" %}
+        <h3 class="post-card__title">{{ post.title }}</h3>
+        <p class="post-card__excerpt">{{ post.preview.length(25) }}</p>
+      </div>
+    </div>
+  </a>
+</div>

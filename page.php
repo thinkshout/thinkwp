@@ -12,29 +12,19 @@
  * @package thinkwp
  */
 
-get_header();
-?>
+use Timber\Timber;
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-
-		<?php
-		while ( have_posts() ) :
-			the_post();
-
-			get_template_part( 'template-parts/content', 'page' );
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+$context     = Timber::get_context();
+$timber_post = new TimberPost();
+if ( isset( $post->hero_hero_image ) && strlen( $post->hero_hero_image ) ) {
+	$timber_post->hero_image = new \Timber\Image( $post->hero_hero_image );
+} else {
+	$timber_post->hero_image = $timber_post->thumbnail;
+}
+if ( isset( $timber_post->flexible_content ) && is_array( $timber_post->flexible_content ) && count( $timber_post->flexible_content ) ) {
+	$timber_post->flexible_blocks = $timber_post->flexible_content;
+}
+$context['post']       = $timber_post;
+$context['pagination'] = Timber::get_pagination();
+$templates             = array( 'page/page-' . $timber_post->slug . '.twig', $timber_post->slug . '.twig', 'templates/page.twig' );
+Timber::render( $templates, $context, false );

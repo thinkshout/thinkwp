@@ -1,0 +1,33 @@
+<header id="masthead" class="site-header">
+  <nav id="site-navigation" class="main-navigation">
+    <div class="site-branding site-title">
+      <a href="{{ function('home_url', '/') }}" rel="home">
+        <img src="{{ site_logo }}" alt="Site Logo" />
+        <span class="screen-reader-text">{{ site.name }}</span>
+        <span class="screen-reader-text site-description">
+          {{ site.description }}
+        </span>
+      </a>
+    </div>
+    <!-- .site-branding -->
+    <div class="spacer"></div>
+    {% embed 'components/menu.twig'
+      with {
+        menu: header_menu
+      }
+    %}
+
+    {% endembed %}
+    <button class="menu-toggle btn reset"
+      aria-controls="{{ header_menu.slug }}"
+      aria-expanded="false">
+      <span class="menu-toggle__sandwich-layer"></span>
+      <span class="menu-toggle__sandwich-layer"></span>
+      <span class="menu-toggle__sandwich-layer"></span>
+      <span class="screen-reader-text">
+        Toggle {{ __(header_menu.name, 'thinkwp') }}
+      </span>
+    </button>
+  </nav>
+  <!-- #site-navigation -->
+</header>

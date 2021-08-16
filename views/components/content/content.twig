@@ -1,0 +1,16 @@
+<article id="post-{{ post.id }}" class="post">
+  <div class="entry-content" id="content">
+    <div class="container--content">
+      <div class="post__content">
+        {% include 'components/sidebar.twig' %}
+        <div class="container--inner">
+          {% include 'components/hero.twig' %}
+          {{ post.content }}
+        </div>
+        <div class="placeholder"></div>
+      </div>
+    </div>
+  </div>
+  <!-- .entry-content -->
+</article>
+<!-- #post-{{post.id}} -->

@@ -1,0 +1,10 @@
+<div class="image-banner" style="background-image: url({{flexible_block.banner_image.url}}); background-position-x: {{flexible_block.image_focal_point.horizontal_focal_point}}%; background-position-y: {{flexible_block.image_focal_point.vertical_focal_point}}%;">
+  <img src="{{flexible_block.banner_image.url}}" alt="{{flexible_block.banner_image.alt}}" />
+  <div class="container--inner">
+    <div class="image-banner__content">
+      <h2>{{flexible_block.banner_title}}</h2>
+      <p>{{flexible_block.banner_subtitle}}</p>
+      {% include "components/link.twig" with { link: flexible_block.banner_link, link_classes: 'btn', link_role: 'button', link_is_button: true } %}
+    </div>
+  </div>
+</div>

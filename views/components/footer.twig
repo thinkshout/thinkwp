@@ -1,0 +1,41 @@
+<footer id="colophon" class="site-footer">
+  <div class="container--content">
+    <div class="footer-content">
+      <div class="flex-grid">
+        <div class="grid-1of1 grid-1of4--lg">
+          <div class="footer-content__logo">
+            <a href="{{ function('home_url', '/') }}" rel="home">
+              <img src="{{ site_logo }}" alt="Site Logo" />
+              <span class="screen-reader-text">{{ site.name }}</span>
+            </a>
+          </div>
+        </div>
+        <div class="grid-1of1 grid-3of4--lg">
+          <div class="footer-content__nav">
+            <nav class="footer-nav">
+              {% include 'components/menu.twig' with {
+                menu: footer_menu
+              } %}
+            </nav>
+          </div>
+        </div>
+      </div>
+      <!-- .flex-grid -->
+      <div class="footer-content__copyright">
+        <p>
+          &copy; {{ 'now'|date('Y') }} Site
+        </p>
+        <div class="spacer"></div>
+        <nav class="footer-nav-copy">
+          {% include 'components/menu.twig' with {
+            menu: footer_copy
+          } %}
+        </nav>
+      </div>
+    </div>
+    <!-- .footer-content -->
+  </div>
+  <!-- .container-content -->
+</footer>
+<!-- #colophon -->
+{{ wp_footer }}

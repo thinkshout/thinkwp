@@ -1,37 +1,28 @@
 <?php
 /**
- * The template for displaying all single posts
+ * The single post template file
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  * @package thinkwp
+ * @subpackage  Timber
  */
 
-get_header();
-?>
+use Timber\Timber;
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+$context     = Timber::get_context();
+$timber_post = Timber::query_post();
+if ( isset( $timber_post->hero_hero_image ) && strlen( $timber_post->hero_hero_image ) ) {
+	$timber_post->hero_image = new \Timber\Image( $timber_post->hero_hero_image );
+} else {
+	$timber_post->hero_image = $timber_post->thumbnail;
+}
+if ( isset( $timber_post->flexible_content ) && is_array( $timber_post->flexible_content ) && count( $timber_post->flexible_content ) ) {
+	$timber_post->flexible_blocks = $timber_post->flexible_content;
+}
+$timber_post->categories = $timber_post->categories();
+$context['post']         = $timber_post;
+$context['next_post']    = get_next_post();
+$context['prev_post']    = get_previous_post();
+$templates               = array( 'post/single-' . $timber_post->ID . '.twig', 'post/single-' . $timber_post->post_type . '.twig', 'post/single.twig' );
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
-
-			get_template_part( 'template-parts/content', get_post_type() );
-
-			the_post_navigation();
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+Timber::render( $templates, $context );

@@ -1,0 +1,14 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+  <article id="page-{{ post.slug }}">
+    <div class="entry-content">
+      {% include 'components/hero.twig' %}
+      {% if post.flexible_blocks %}
+        {% include 'components/flexible-content.twig' %}
+      {% endif %}
+    </div>
+    <!-- .entry-content -->
+  </article>
+  <!-- #post-{{post.slug}} -->
+{% endblock %}

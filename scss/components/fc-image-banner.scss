@@ -1,0 +1,23 @@
+.image-banner {
+  @include bg_image_setup;
+  position: relative;
+  padding: rem(90) 0 rem(100);
+  img {
+    @include visually-hidden;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-color: transparentize($black, 0.5);
+  }
+  &__content {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+  }
+}

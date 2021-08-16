@@ -1,0 +1,41 @@
+.scroll-locked {
+  overflow: hidden;
+}
+
+.rounded {
+  border-radius: 5px;
+  &--heavy {
+    border-radius: 34px;
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  padding-top: 50px;
+  width: 50px;
+  position: relative;
+  display: inline-block;
+  &--xl {
+    padding-top: 100px;
+    width: 100px;
+  }
+  > * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    line-height: 1;
+    transform: translate(-50%, -50%);
+  }
+  &--image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    > img {
+      @include visually-hidden;
+    }
+  }
+}
+
+.drop-shadow {
+  box-shadow: rem(5) rem(5) 0px 0px $black;
+}

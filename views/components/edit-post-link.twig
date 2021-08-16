@@ -1,0 +1,9 @@
+<span class="edit-link">
+  <a href="{{ function('get_edit_post_link') }}">
+    {{
+      __('Edit <span class="screen-reader-text">%s</span>', 'thinkwp')|format(
+        post.title
+      )
+    }}
+  </a>
+</span>

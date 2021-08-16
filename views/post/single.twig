@@ -1,0 +1,8 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	{% include 'components/content/content.twig' %}
+	{% if post.flexible_blocks %}
+	{% include 'components/flexible-content.twig' %}
+	{% endif %}
+{% endblock %}

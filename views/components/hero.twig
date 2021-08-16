@@ -1,0 +1,36 @@
+{% if not is_archive %}
+<header class="{{post.type}}-hero {{post.slug}}__hero{% if not post.hero_image %} {{post.type}}-hero__no-image{% endif %}">
+  <div class="{{post.type}}-hero__content">
+    {% if post.type == 'post' or post.type == 'event' or post.type == 'project' %}
+    <div class="{{post.type}}-hero__tag">
+      {% include 'components/post-tag-link.twig' %}
+    </div>
+    {% endif %}
+    <div class="{{post.type}}-hero__title">
+      {% if post.hero_hero_title %}
+      <h1 class="{{post.slug}}__title">{{post.hero_hero_title}}</h1>
+      {% else %}
+      <h1 class="{{post.slug}}__title">{{post.title}}</h1>
+      {% endif %}
+    </div>
+    {% if post.hero_image %}
+    <div class="{{post.type}}-hero__image"{% if post.type == 'page' %} style="background-image: url({{post.hero_image.src}})"{% endif %}>
+      {% if post.hero_image %}
+        <figure>
+          <img src="{{post.hero_image.src}}" alt="{{post.hero_image.alt}}"/>
+          {% if post.type == 'post' or post.type == 'event' %}
+          <figcaption>{{post.hero_image.caption}}</figcaption>
+          {% endif %}
+        </figure>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+</header><!-- .{{post.type}}-hero -->
+{% else %}
+<header class="archive-hero {{archive_slug}}-archive__hero">
+  <div class="archive-hero__title">
+    <h1 class="{{archive_slug}}__title">{{wp_title}}</h1>
+  </div>
+</header>
+{% endif %}
