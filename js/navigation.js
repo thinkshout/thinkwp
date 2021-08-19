@@ -5,7 +5,7 @@
  * navigation support for dropdown menus.
  */
 (function() {
-  let masthead, container, button, menu, links, site;
+  let masthead, container, button, menu, links, site, buttonLabel;
 
   site = document.getElementsByTagName("html")[0];
 
@@ -20,6 +20,8 @@
   if ("undefined" === typeof button) {
     return;
   }
+  
+  buttonLabel = button.querySelector("span.screen-reader-text");
 
   menu = container.getElementsByTagName("ul")[0];
 
@@ -38,12 +40,14 @@
     if (-1 !== container.className.indexOf("toggled")) {
       container.className = container.className.replace(" toggled", "");
       button.setAttribute("aria-expanded", "false");
+      buttonLabel.innerHTML = `${buttonLabel.innerHTML.replace('Close', 'Open')}`;
       menu.setAttribute("aria-expanded", "false");
       masthead.classList.remove("menu-toggled");
       site.classList.remove("scroll-locked");
     } else {
       container.className += " toggled";
       button.setAttribute("aria-expanded", "true");
+      buttonLabel.innerHTML = `${buttonLabel.innerHTML.replace('Open', 'Close')}`;
       menu.setAttribute("aria-expanded", "true");
       masthead.classList.add("menu-toggled");
       site.classList.add("scroll-locked");
