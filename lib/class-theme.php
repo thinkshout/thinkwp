@@ -264,6 +264,9 @@ class Theme {
 			)
 		);
 
+		wp_enqueue_script( 'alpinejs', 'https://unpkg.com/alpinejs@3.4.1/dist/cdn.min.js', [], '3.4.1', false );
+		wp_enqueue_script( 'thinkwp-alpine', get_template_directory_uri() . '/js/alpine.js', [], $this->scripts_version, false );
+
 		wp_enqueue_script( 'thinkwp-navigation', get_template_directory_uri() . '/js/navigation.js', [], $this->scripts_version, true );
 
 		wp_enqueue_script( 'thinkwp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', [], $this->scripts_version, true );

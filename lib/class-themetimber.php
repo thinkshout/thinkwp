@@ -19,12 +19,11 @@ class ThemeTimber extends Timber\Site {
 	 */
 	public function __construct() {
 		// Actions!
-		add_action( 'acf/init', 'timber_block_init', 10, 0 ); // Register blocks in views/blocks with ACF.
-
 		// Filters!
 		add_filter( 'timber/context', [ $this, 'add_to_context' ] );
 		add_filter( 'timber/twig', [ $this, 'add_to_twig' ] );
 
+		// new Timber_Acf_Wp_Blocks(); // Register blocks in views/blocks with ACF.
 		parent::__construct();
 	}
 
@@ -36,13 +35,13 @@ class ThemeTimber extends Timber\Site {
 	 * @return object the modified (added to) TimberContext
 	 */
 	public function add_to_context( $context ) {
-		$context['header_menu']     = new TimberMenu( 'header-menu' );
-		$context['footer_menu']    = new TimberMenu( 'footer-menu' );
-		$context['footer_copy']     = new TimberMenu( 'footer-copyright' );
-		$context['theme_mods']      = get_theme_mods();
-		$context['path']            = get_stylesheet_directory_uri();
-		$context['stylesheet']      = get_stylesheet_directory_uri() . '/dist/main.css';
-		$context['site_logo']       = wp_get_attachment_image_url( $context['theme_mods']['custom_logo'], 'full' );
+		$context['header_menu'] = new TimberMenu( 'header-menu' );
+		$context['footer_menu'] = new TimberMenu( 'footer-menu' );
+		$context['footer_copy'] = new TimberMenu( 'footer-copyright' );
+		$context['theme_mods']  = get_theme_mods();
+		$context['path']        = get_stylesheet_directory_uri();
+		$context['stylesheet']  = get_stylesheet_directory_uri() . '/dist/main.css';
+		$context['site_logo']   = wp_get_attachment_image_url( $context['theme_mods']['custom_logo'], 'full' );
 
 		return $context;
 	}
