@@ -8,7 +8,7 @@ $btn-font-size-xs: rem(12);
 $btn-font-size-sm: rem(16);
 $btn-font-size: rem(18);
 $btn-font-family: $font-family-sans;
-$btn-weight: $semibold;
+$btn-weight: $font-weight-semibold;
 
 .link-chevron,
 .link-back,
@@ -28,7 +28,7 @@ $btn-weight: $semibold;
 a.link-chevron,
 .link-back,
 a.link-back {
-  color: $black;
+  color: $color-black;
   text-decoration: none;
 
   @include hocus {
@@ -76,23 +76,23 @@ a.link-back {
 a.btn-outline,
 .btn-outline a {
   background-color: transparent;
-  border: 1px solid $black;
+  border: 1px solid $color-black;
   border-radius: 30px;
-  color: $black;
+  color: $color-black;
   line-height: 1;
   padding: $spacer-xs $spacer-sm;
   text-decoration: none;
 
   @include hocus {
-    background-color: $black;
-    color: $white;
-    transition: $transition;
+    background-color: $color-black;
+    color: $color-white;
+    transition: $transition-default;
   }
 }
 
 .btn-tag,
 a.btn-tag {
-  background-color: $grey-lt;
+  background-color: $color-gray-lt;
   border: 1px solid;
   display: inline-block;
   font-size: $btn-font-size-xs;
@@ -108,23 +108,23 @@ a.btn-tag {
 
 .btn-solid,
 a.btn-solid {
-  background-color: $black;
+  background-color: $color-black;
   border: 1px solid;
   border-radius: 30px;
-  color: $white;
+  color: $color-white;
   padding: $spacer-xs $spacer-sm;
   text-decoration: none;
 
   @include hocus {
-    background-color: $white;
-    color: $black;
+    background-color: $color-white;
+    color: $color-black;
   }
 }
 
 .btn-close {
   @include hocus {
     border-bottom: 1px solid;
-    transition: $transition;
+    transition: $transition-default;
   }
 }
 
@@ -146,11 +146,11 @@ a.link-style {
   border-bottom: 1px solid transparent;
   @include hocus {
     border-bottom: 1px solid;
-    transition: $transition;
+    transition: $transition-default;
   }
 
   &.is-active {
-    border-bottom: 1px solid $black;
+    border-bottom: 1px solid $color-black;
   }
 }
 
@@ -160,10 +160,10 @@ a.link-style {
 }
 
 .btn-search {
-  background-color: $grey-lt;
+  background-color: $color-gray-lt;
   padding: $spacer-xs $spacer-xs $spacer-2xs;
   border-radius: 30px;
   @include hocus {
-    background-color: $grey-dk;
+    background-color: $color-gray-dk;
   }
 }

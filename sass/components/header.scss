@@ -9,38 +9,28 @@
     .menu-toggle {
       display: block;
       padding-top: rem(5px);
-      @include mq($lg) {
+      @include mq(lg) {
         display: none;
       }
     }
     .menu {
       display: none;
       .menu-link {
-        color: $white;
         display: block;
         text-decoration: none;
         transition: color 0.25s ease;
         cursor: pointer;
         padding: rem(15px) 0;
-        @include font($body-font, "bold");
-        @include mq($lg) {
+        @include mq(lg) {
           padding: 0 0;
         }
       }
       .menu-item {
-        &:not(.menu-item-has-children) {
-          &:nth-last-child(2),
-          &:nth-last-child(3) {
-            .menu-link {
-              @include font($body-font, "regular");
-            }
-          }
-        }
         &.menu-item-has-children {
           position: relative;
           > .menu-link {
             &:after {
-              content: url($theme_url+"/assets/svg/MenuChevron.svg");
+              content: url("/assets/svg/MenuChevron.svg");
               display: inline-block;
               width: rem(10px);
               position: relative;
@@ -69,7 +59,6 @@
               padding: rem(10) rem(16);
               white-space: nowrap;
               text-transform: none;
-              @include font($body-font, "regular");
               &:after {
                 content: none;
               }
@@ -78,7 +67,7 @@
               }
             }
           }
-          @include mq($lg) {
+          @include mq(lg) {
             position: absolute;
           }
         }
@@ -95,14 +84,13 @@
           }
         }
       }
-      @include mq($lg) {
+      @include mq(lg) {
         display: inline-block;
         margin-left: rem(60);
         .menu-item {
           position: relative;
         }
         .menu-link {
-          @include font($body-font, "bold");
           padding: rem(25) rem(10);
           text-decoration: none;
           transition: color 0.25s ease;
@@ -156,7 +144,7 @@
       position: absolute;
       width: 100%;
     }
-    @include mq($lg) {
+    @include mq(lg) {
       width: rem(115px);
     }
   }
@@ -165,7 +153,7 @@
     position: relative;
     &__sandwich-layer {
       border-radius: 2px;
-      background-color: $black;
+      background-color: $color-black;
       height: 3px;
       left: 0;
       top: 0;
@@ -190,7 +178,7 @@
       visibility: hidden;
     }
   }
-  @include mq($xl) {
+  @include mq(xl) {
     padding: rem(23) rem(120);
   }
 }

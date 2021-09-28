@@ -1,0 +1,16 @@
+{
+  "opacity": {
+    "invisible": {
+      "value": 0
+    },
+    "almost-invisible": {
+      "value": 0.2
+    },
+    "semi-invisible": {
+      "value": 0.5
+    },
+    "visible": {
+      "value": 1
+    }
+  }
+}

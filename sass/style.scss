@@ -1,0 +1,16 @@
+/* Global Dictionary */
+@import "global/*";
+
+/* Tailwind */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* THEME */
+@import "theme/theme.scss";
+
+/* PAGES */
+@import "pages/*";
+
+/* COMPONENTS */
+@import "components/*";

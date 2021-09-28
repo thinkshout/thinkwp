@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
 
-  @include mq($md) {
+  @include mq(md) {
     display: none;
   }
 }
@@ -17,7 +17,7 @@
 
   div {
     span {
-      background-color: $black;
+      background-color: $color-black;
       height: 4px;
       left: 50%;
       position: absolute;
@@ -28,7 +28,7 @@
 
       &:before,
       &:after {
-        background: $black;
+        background: $color-black;
         content: "";
         height: 100%;
         left: 0;
@@ -48,9 +48,9 @@
       background-color: transparent;
       &:before,
       &:after {
-        background: $black;
+        background: $color-black;
         transform: rotate(45deg) translateY(0);
-        transition: transform $transition-defaults;
+        transition: transform $transition-default;
       }
       &:after {
         transform: rotate(-45deg) translateY(0);
@@ -68,7 +68,7 @@
     div span,
     div span:before,
     div span:after {
-      background-color: $black;
+      background-color: $color-black;
     }
   }
 }
@@ -76,20 +76,19 @@
 // Expanded menu
 .mobile-menu-target {
   opacity: 0;
-  padding: $grid-gutter;
   position: absolute;
   right: 0;
   top: 56px;
-  transition: visibility 0s 0.2s, opacity $transition-defaults;
+  transition: visibility 0s 0.2s, opacity $transition-default;
   visibility: hidden;
   z-index: 10;
 
   &.expanded {
     opacity: 1;
-    transition: opacity $transition-defaults;
+    transition: opacity $transition-default;
     visibility: visible;
 
-    @include mq($md) {
+    @include mq(md) {
       display: none;
     }
   }

@@ -1,17 +1,8 @@
 #page-not-found {
-  .entry-content {
-    margin: 0;
-    text-align: center;
-  }
   .container__inner {
-    margin: rem(40) auto;
-    h1 {
-      z-index: 1;
-      position: relative;
-    }
     &:after {
       content: "404";
-      color: $grey;
+      color: $color-gray-dk;
       left: 50%;
       transform: translateX(-50%);
       opacity: 0.5;

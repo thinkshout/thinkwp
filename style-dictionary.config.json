@@ -1,0 +1,35 @@
+{
+  "source": ["tokens/**/*.json"],
+  "platforms": {
+    "scss": {
+      "transformGroup": "scss",
+      "buildPath": "sass/",
+      "files": [
+        {
+          "destination": "global/_generated-variables.scss",
+          "format": "scss/variables",
+          "options": {
+            "showFileHeader": true
+          }
+        },
+        {
+          "destination": "global/_generated-map-deep-variables.scss",
+          "format": "scss/map-deep",
+          "options": {
+            "showFileHeader": true
+          }
+        }
+      ]
+    },
+    "tailwind": {
+      "transformGroup": "js",
+      "buildPath": "./",
+      "files": [
+        {
+          "destination": "tailwind-tokens.json",
+          "format": "json/nested"
+        }
+      ]
+    }
+  }
+}

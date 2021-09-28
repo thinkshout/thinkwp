@@ -31,6 +31,27 @@
       "problemMatcher": [],
       "label": "npm: start",
       "detail": "webpack --watch"
+    },
+    {
+      "type": "npm",
+      "script": "tokens",
+      "problemMatcher": [],
+      "label": "npm: tokens",
+      "detail": "style-dictionary build --config style-dictionary.config.json"
+    },
+    {
+      "type": "npm",
+      "script": "prettier",
+      "problemMatcher": [],
+      "label": "npm: prettier",
+      "detail": "prettier --write sass/**/*.scss js/**/*.js"
+    },
+    {
+      "type": "npm",
+      "script": "tw.dev",
+      "problemMatcher": [],
+      "label": "npm: tw.dev",
+      "detail": "NODE_ENV=development tailwindcss -i ./sass/tailwind.css -o ./dist/tailwind.css --watch"
     }
   ]
 }

@@ -10,7 +10,7 @@ module.exports = (env, argv) => {
     mode: isDevMode ? "development" : "production",
     devtool: isDevMode ? "source-map" : false,
     entry: {
-      main: ["./js/main.js", "./scss/style.scss"]
+      main: ["./js/main.js", "./sass/style.scss"]
     },
     module: {
       rules: [

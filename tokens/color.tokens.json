@@ -1,0 +1,10 @@
+{
+  "color": {
+    "black": { "value": "#000" },
+    "white": { "value": "#FFF" },
+    "gray": {
+      "lt": { "value": "#ededed" },
+      "dk": { "value": "#444" }
+    }
+  }
+}

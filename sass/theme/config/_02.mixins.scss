@@ -6,22 +6,11 @@
 /* MEDIA QUERIES */
 @mixin mq($breakpoint) {
   @if (type-of($breakpoint) == string) {
-    $breakpoint: map-get($breakpoints, $breakpoint);
+    $breakpoint: map-deep-get($tokens, 'screen', $breakpoint);
   }
   @media (min-width: rem($breakpoint)) {
     @content;
   }
-}
-
-/* PX TO REM CONVERSION */
-@function rem($pixels, $context: $base-font-size) {
-  @if (unitless($pixels)) {
-    $pixels: $pixels * 1px;
-  }
-  @if (unitless($context)) {
-    $context: $context * 1px;
-  }
-  @return $pixels / $context * 1rem;
 }
 
 /* GRID */

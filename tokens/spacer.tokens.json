@@ -1,0 +1,16 @@
+{
+  "spacer": {
+    "0": { "value": "0" },
+    "px": { "value": "1px" },
+    "3xs": { "value": "0.25rem" },
+    "2xs": { "value": "0.5rem" },
+    "xs": { "value": "1rem" },
+    "sm": { "value": "1.25rem" },
+    "md": { "value": "2rem" },
+    "lg": { "value": "3rem" },
+    "xl": { "value": "4rem" },
+    "2xl": { "value": "6rem" },
+    "3xl": { "value": "8.125rem" },
+    "4xl": { "value": "10rem" }
+  }
+}

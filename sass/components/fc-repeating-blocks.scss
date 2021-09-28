@@ -16,7 +16,7 @@
       &--no-image {
         padding-top: rem(50);
       }
-      @include mq($lg) {
+      @include mq(lg) {
         margin: rem(50) 0 rem(120);
         overflow-x: initial;
       }
@@ -26,7 +26,7 @@
       img {
         width: 100%;
       }
-      @include mq($lg) {
+      @include mq(lg) {
         padding: 0;
       }
     }
@@ -38,23 +38,23 @@
       }
       h2 {
         margin-bottom: 0;
-        @include mq($lg) {
+        @include mq(lg) {
           margin-bottom: rem(30);
         }
       }
       p {
         margin-bottom: rem(15);
-        @include mq($lg) {
+        @include mq(lg) {
           margin-bottom: rem(42);
         }
       }
       .btn {
         margin-bottom: rem(10);
-        @include mq($lg) {
+        @include mq(lg) {
           margin-bottom: rem(0);
         }
       }
-      @include mq($lg) {
+      @include mq(lg) {
         position: relative;
         top: 50%;
         transform: translateY(-50%);

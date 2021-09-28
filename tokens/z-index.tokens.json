@@ -1,0 +1,46 @@
+{
+  "z-index": {
+    "deep": {
+      "value": -100
+    },
+    "background": {
+      "value": -50
+    },
+    "behind": {
+      "value": -25
+    },
+    "default": {
+      "value": 1
+    },
+    "docked": {
+      "value": 10
+    },
+    "sticky": {
+      "value": 20
+    },
+    "popup": {
+      "value": 30
+    },
+    "dialog": {
+      "value": 40
+    },
+    "dropdown": {
+      "value": 50
+    },
+    "overlay": {
+      "value": 60
+    },
+    "reminder": {
+      "value": 70
+    },
+    "modal": {
+      "value": 80
+    },
+    "spinner": {
+      "value": 90
+    },
+    "toast": {
+      "value": 100
+    }
+  }
+}

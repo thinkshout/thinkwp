@@ -1,0 +1,72 @@
+{
+  "transition": {
+    "default": "all 300ms ease-in-out"
+  },
+  "color": {
+    "black": "#000000",
+    "white": "#ffffff",
+    "gray": {
+      "lt": "#ededed",
+      "dk": "#444444"
+    }
+  },
+  "opacity": {
+    "invisible": 0,
+    "almost-invisible": 0.2,
+    "semi-invisible": 0.5,
+    "visible": 1
+  },
+  "screen": {
+    "default": "0px",
+    "sm": "501px",
+    "md": "769px",
+    "lg": "1025px",
+    "xl": "1442px",
+    "2xl": "2000px",
+    "siteMaxWidth": "2000px"
+  },
+  "spacer": {
+    "0": "0",
+    "px": "1px",
+    "3xs": "0.25rem",
+    "2xs": "0.5rem",
+    "xs": "1rem",
+    "sm": "1.25rem",
+    "md": "2rem",
+    "lg": "3rem",
+    "xl": "4rem",
+    "2xl": "6rem",
+    "3xl": "8.125rem",
+    "4xl": "10rem"
+  },
+  "font": {
+    "weight": {
+      "book": "300",
+      "light": "300",
+      "regular": "400",
+      "medium": "500",
+      "semibold": "600",
+      "bold": "700"
+    },
+    "family": {
+      "serif": "'Geller Headline', Times, serif",
+      "sans": "'Halyard Text', Helvetica, Arial, sans-serif"
+    }
+  },
+  "z-index": {
+    "deep": -100,
+    "background": -50,
+    "behind": -25,
+    "default": 1,
+    "docked": 10,
+    "sticky": 20,
+    "popup": 30,
+    "dialog": 40,
+    "dropdown": 50,
+    "overlay": 60,
+    "reminder": 70,
+    "modal": 80,
+    "spinner": 90,
+    "toast": 100
+  }
+}

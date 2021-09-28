@@ -1,0 +1,129 @@
+
+/**
+ * Do not edit directly
+ * Generated on Tue, 28 Sep 2021 19:13:43 GMT
+ */
+
+$transition-default: all 300ms ease-in-out !default;
+$color-black: #000000 !default;
+$color-white: #ffffff !default;
+$color-gray-lt: #ededed !default;
+$color-gray-dk: #444444 !default;
+$opacity-invisible: 0 !default;
+$opacity-almost-invisible: 0.2 !default;
+$opacity-semi-invisible: 0.5 !default;
+$opacity-visible: 1 !default;
+$screen-default: 0px !default;
+$screen-sm: 501px !default;
+$screen-md: 769px !default;
+$screen-lg: 1025px !default;
+$screen-xl: 1442px !default;
+$screen-2xl: 2000px !default;
+$screen-site-max-width: 2000px !default;
+$spacer-0: 0 !default;
+$spacer-px: 1px !default;
+$spacer-3xs: 0.25rem !default;
+$spacer-2xs: 0.5rem !default;
+$spacer-xs: 1rem !default;
+$spacer-sm: 1.25rem !default;
+$spacer-md: 2rem !default;
+$spacer-lg: 3rem !default;
+$spacer-xl: 4rem !default;
+$spacer-2xl: 6rem !default;
+$spacer-3xl: 8.125rem !default;
+$spacer-4xl: 10rem !default;
+$font-weight-book: 300 !default;
+$font-weight-light: 300 !default;
+$font-weight-regular: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-bold: 700 !default;
+$font-family-serif: 'Geller Headline', Times, serif !default;
+$font-family-sans: 'Halyard Text', Helvetica, Arial, sans-serif !default;
+$z-index-deep: -100 !default;
+$z-index-background: -50 !default;
+$z-index-behind: -25 !default;
+$z-index-default: 1 !default;
+$z-index-docked: 10 !default;
+$z-index-sticky: 20 !default;
+$z-index-popup: 30 !default;
+$z-index-dialog: 40 !default;
+$z-index-dropdown: 50 !default;
+$z-index-overlay: 60 !default;
+$z-index-reminder: 70 !default;
+$z-index-modal: 80 !default;
+$z-index-spinner: 90 !default;
+$z-index-toast: 100 !default;
+
+$tokens: (
+  'transition': (
+    'default': $transition-default
+  ),
+  'color': (
+    'black': $color-black,
+    'white': $color-white,
+    'gray': (
+      'lt': $color-gray-lt,
+      'dk': $color-gray-dk
+    )
+  ),
+  'opacity': (
+    'invisible': $opacity-invisible,
+    'almost-invisible': $opacity-almost-invisible,
+    'semi-invisible': $opacity-semi-invisible,
+    'visible': $opacity-visible
+  ),
+  'screen': (
+    'default': $screen-default,
+    'sm': $screen-sm,
+    'md': $screen-md,
+    'lg': $screen-lg,
+    'xl': $screen-xl,
+    '2xl': $screen-2xl,
+    'siteMaxWidth': $screen-site-max-width
+  ),
+  'spacer': (
+    '0': $spacer-0,
+    'px': $spacer-px,
+    '3xs': $spacer-3xs,
+    '2xs': $spacer-2xs,
+    'xs': $spacer-xs,
+    'sm': $spacer-sm,
+    'md': $spacer-md,
+    'lg': $spacer-lg,
+    'xl': $spacer-xl,
+    '2xl': $spacer-2xl,
+    '3xl': $spacer-3xl,
+    '4xl': $spacer-4xl
+  ),
+  'font': (
+    'weight': (
+      'book': $font-weight-book,
+      'light': $font-weight-light,
+      'regular': $font-weight-regular,
+      'medium': $font-weight-medium,
+      'semibold': $font-weight-semibold,
+      'bold': $font-weight-bold
+    ),
+    'family': (
+      'serif': $font-family-serif,
+      'sans': $font-family-sans
+    )
+  ),
+  'z-index': (
+    'deep': $z-index-deep,
+    'background': $z-index-background,
+    'behind': $z-index-behind,
+    'default': $z-index-default,
+    'docked': $z-index-docked,
+    'sticky': $z-index-sticky,
+    'popup': $z-index-popup,
+    'dialog': $z-index-dialog,
+    'dropdown': $z-index-dropdown,
+    'overlay': $z-index-overlay,
+    'reminder': $z-index-reminder,
+    'modal': $z-index-modal,
+    'spinner': $z-index-spinner,
+    'toast': $z-index-toast
+  )
+);
