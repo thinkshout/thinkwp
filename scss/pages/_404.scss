@@ -12,8 +12,6 @@
     &:after {
       content: "404";
       color: $grey;
-      @include font($header-font, "black");
-      @include font-line-height(80, 10);
       left: 50%;
       transform: translateX(-50%);
       opacity: 0.5;

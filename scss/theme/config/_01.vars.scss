@@ -6,16 +6,21 @@
 
 $theme-url: "/wp-content/themes/custom/thinkwp";
 
-/* COLORS */
-$black: #000000;
-$white: #ffffff;
+/* COLORS $color, $color-dk, $color-lt. */
 
-$light-grey: #ededed; // Color used in the side margins when viewing on xxl screens.
-$light-gray: $light-grey;
+// Primary
+$black: #000;
+$white: #fff;
+$grey-lt: #ededed;
+$grey-dk: #444;
+
+// Admin nav
+$navAccent: $grey-dk;
+
+$gray-lt: $grey-lt;
 $grey: #b5b9dd;
 $gray: $grey;
-$dark-grey: #575757;
-$dark-gray: $dark-grey;
+$gray-dk: $grey-dk;
 
 $facebook-blue: #1877f2;
 $twitter-blue: #1da1f2;
@@ -24,11 +29,22 @@ $linkedin-blue: #2767b1;
 /* FONTS */
 
 // Typefaces
-$header-font: "";
-$body-font: "";
+$font-family-serif: "Geller Headline", Times, serif;
+$font-family-sans: "Halyard Text", Helvetica, Arial, sans-serif;
 
 // Base Font Size
 $base-font-size: 16;
+
+// Letterspacing
+$letterspacing: 1.1px;
+
+// Weights
+$book: 300;
+$light: $book;
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
 
 /* BREAKPOINTS */
 $breakpoints: (
@@ -73,10 +89,22 @@ $grid-gutter-double: $grid-gutter * 2;
 $grid-columns-mobile: 4;
 $grid-columns: 12;
 
+// Spacers (margin, padding, element sizes)
+$spacer-3xs: 0.25rem; // 4px
+$spacer-2xs: 0.5rem; // 8px
+$spacer-xs: 1rem; // 16px
+$spacer-sm: 1.25rem; // 20px
+$spacer-md: 2rem; // 32px
+$spacer-lg: 3rem; // 48px
+$spacer-xl: 4rem; // 64px
+$spacer-2xl: 6rem; // 96px
+$spacer-3xl: 8.125rem; //130px
+$spacer-4xl: 10rem; //160px
+
 /* MISC. */
 
 // Transitions
-$transition-defaults: 0.2s linear;
+$transition: 0.33s ease;
 
 //Padding values
 $padding-vertical: 48px;

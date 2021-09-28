@@ -1,0 +1,58 @@
+// Commonly used css.
+
+// FONT Weight
+.bold { font-weight: $bold; }
+.semibold { font-weight: $semibold; }
+.medium { font-weight: $medium; }
+.regular { font-weight: $regular; }
+.book,.light { font-weight: $book; }
+
+// FONT Transform
+.capitalize { text-transform: capitalize; }
+.lowercase { text-transform: lowercase; }
+.normalcase { text-transform: none; }
+.uppercase { text-transform: uppercase; }
+
+// FONT Align
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center-md {
+  @include mq($md) {
+    text-align: center;
+  }
+}
+
+// FONT Other
+.hyphenate { hyphens: auto; }
+.letter-spacing { letter-spacing: $letterspacing; }
+
+// Display
+.block { display: block; }
+.inline { display: inline; }
+.inline-block { display: inline-block; }
+.flex { display: flex; }
+
+@include mq($md) {
+  .inline-md { display: inline; }
+  .inline-block-md { display: inline-block; }
+  .flex-md { display: flex; }
+}
+
+// Position
+.absolute { position: absolute; }
+.relative { position: relative; }
+
+.top-0 { top: 0; }
+.bottom-0 { bottom: 0; }
+.left-0 { left: 0; }
+.right-0 { right: 0; }
+
+// z-index
+.z-0 { z-index: 0; }
+.z-1 { z-index: 1; }
+.z-2 { z-index: 2; }
+
+.width-50 {
+  width: 50%;
+}

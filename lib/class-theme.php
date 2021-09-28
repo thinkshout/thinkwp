@@ -29,6 +29,8 @@ class Theme {
 		if ( file_exists( __DIR__ . '/dist_dev' ) ) {
 			$this->scripts_dir = 'dist_dev';
 		}
+		// Theme activation and deactivation hooks
+		register_activation_hook( __FILE__, [ $this, 'thinkwp_activate' ] );
 
 		// Actions, Filters, and Theme Setup!
 		add_action( 'init', [ $this, 'thinkwp_init' ] );
@@ -40,6 +42,20 @@ class Theme {
 
 		// Initiate Timber!
 		new ThemeTimber();
+	}
+
+	/**
+	 * Theme activation hook
+	 */
+	public function thinkwp_activate() {
+		$style_guide_page = array(
+			'post_title'  => 'Style Guide',
+			'post_status' => 'private',
+			'post_author' => 1,
+			'post_type'   => 'page'
+		);
+		wp_insert_post( $style_guide_page );
+		// Add any additional activation code here
 	}
 
 	/**

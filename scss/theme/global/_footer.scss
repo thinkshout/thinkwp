@@ -1,6 +1,5 @@
 /* Global Footer styles go here */
 .site-footer {
-  background-color: $disco-pine-medium;
   @include mq($lg) {
     padding: rem(88) 0 rem(20);
   }
@@ -80,7 +79,6 @@
       nav,
       .menu-link {
         display: inline-block;
-        color: $off-white;
         margin-top: 0;
         @include font($body-font, "regular");
         @include font-line-height(14, 20);
@@ -94,7 +92,6 @@
               content: "|";
               display: inline-block;
               margin: 0 5px;
-              color: $off-white;
               position: relative;
               top: 2px;
             }

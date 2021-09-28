@@ -1,0 +1,53 @@
+// HEIGHTS and WIDTHS
+
+$heights: (
+  'zero': 0,
+  'px': 1px,
+  '3xs': $spacer-3xs,
+  '2xs': $spacer-2xs,
+  'xs': $spacer-xs,
+  'sm': $spacer-sm,
+  'md': $spacer-md,
+  'lg': $spacer-lg,
+  'xl': $spacer-xl,
+  '2xl': $spacer-2xl,
+  '3xl': $spacer-3xl,
+  '4xl': $spacer-4xl,
+  '100': 100%,
+);
+
+// Height Classes
+@each $name, $height in $heights {
+  .h-#{$name} {
+    height: $height;
+  }
+}
+
+$widths: (
+  'zero': 0,
+  '25': 25%,
+  '33': 33%,
+  '50': 50%,
+  '66': 66%,
+  '75': 75%,
+  '100': 100%,
+);
+
+// Width Classes
+@each $name, $width in $widths {
+  .w-#{$name} {
+    width: $width;
+  }
+
+  .w-#{$name}-sm {
+    @include mq($sm) {
+      width: $width;
+    }
+  }
+
+  .w-#{$name}-md {
+    @include mq($md) {
+      width: $width;
+    }
+  }
+}

@@ -24,52 +24,10 @@
   @return $pixels / $context * 1rem;
 }
 
-/* FONTS */
-
-// Font styles - ToDo: Add project fonts.
-@mixin font($family, $weight: "normal", $style: "normal") {
-  font-family: $family, sans-serif;
-
-  @if ($weight == "black") {
-    font-weight: 900;
-  } @else if ($weight == "bold") {
-    font-weight: 700;
-  } @else if ($weight == "semibold") {
-    font-weight: 600;
-  } @else if ($weight == "medium") {
-    font-weight: 500;
-  } @else if
-    ($weight == "regular") or
-    ($weight == "book") or
-    ($weight == "italic")
-  {
-    font-weight: 400;
-  } @else if ($weight == "light") {
-    font-weight: 300;
-  } @else if ($weight == "extralight") {
-    font-weight: 200;
-  }
-
-  // Set italic style
-  @if ($style == "italic") or ($weight == "italic") {
-    font-style: italic;
-  }
-}
-
-// Fonts and accessible line-heights. Apply the $size (font-size) and
-// $line-height values from the designs here (in px). $baseFontSize is the
-// base font-size assigned for this project.
-@mixin font-line-height($font-size: $base-font-size, $line-height: 20) {
-  $font-size-px: $font-size * 1px;
-  $base-font-size-px: $base-font-size * 1px;
-  font-size: ($font-size-px / $base-font-size-px) * 1rem;
-  line-height: ($line-height / $font-size);
-}
-
 /* GRID */
 
 //Grid Browser Compliance (requires parent element with `.grid`)
-@mixin column-width($start, $end) {
+@mixin grid-column($start, $end) {
   $spanWidth: $end - $start;
 
   grid-column: #{$start} / #{$end};
@@ -81,54 +39,24 @@
 @mixin center-columns($centered-columns, $total-columns) {
   @if ($total-columns - $centered-columns == 0) {
     $total-columns: $total-columns + 1;
-    @include column-width(1, $total-columns);
+    @include grid-column(1, $total-columns);
   } @else {
     $position-left: ($total-columns - $centered-columns)/2 + 1;
     $position-right: $position-left + $centered-columns;
-    @include column-width(#{$position-left}, #{$position-right});
-  }
-}
-
-// Gutter spacing
-// Pass in "right, left, top or bottom" to add consistent margin; pass in 'half' to halve the margin; pass in 'minus' to set a negative margin.
-@mixin margin-gutter($side: bottom, $half: false, $minus: false) {
-  @if ($half == false) {
-    @if ($minus == false) {
-      margin-#{$side}: $grid-gutter;
-      @include mq($ph) {
-        margin-#{$side}: $grid-gutter;
-      }
-    } @else {
-      margin-#{$side}: $grid-gutter;
-      @include mq($ph) {
-        margin-#{$side}: ($grid-gutter * -1);
-      }
-    }
-  } @else {
-    @if ($minus == false) {
-      margin-#{$side}: ($grid-gutter / 2);
-      @include mq($ph) {
-        margin-#{$side}: ($grid-gutter / 2);
-      }
-    } @else {
-      margin-#{$side}: (($grid-gutter / 2) * -1);
-      @include mq($ph) {
-        margin-#{$side}: (($grid-gutter / 2) * -1);
-      }
-    }
+    @include grid-column(#{$position-left}, #{$position-right});
   }
 }
 
 // Gutter spacing w/ Grid
 @mixin grid-equal-items($items-in-row) {
   @if ($items-in-row == 2) {
-    $percent: calc(50% - (#{$grid-gutter}/ 2));
+    $percent: calc(50% - (#{$gutter}/ 2));
     grid-template-columns: $percent $percent;
   } @else if ($items-in-row == 3) {
-    $percent: calc(33.33% - (#{$grid-gutter}/ 1.5));
+    $percent: calc(33.33% - (#{$gutter}/ 1.5));
     grid-template-columns: $percent $percent $percent;
   } @else if ($items-in-row == 4) {
-    $percent: calc(25% - #{$grid-gutter});
+    $percent: calc(25% - #{$gutter});
   } @else {
     $percent: 100%;
     grid-template-columns: $percent;
@@ -157,27 +85,41 @@
   @content;
 }
 
-// Pass in "right, left, top or bottom" to add consistent margin; pass in 'half' to halve the margin; pass in 'minus' to set a negative margin.
+// Gutter spacing
 @mixin margin-gutter($side: bottom, $half: false, $minus: false) {
   @if ($half == false) {
     @if ($minus == false) {
-      margin-#{$side}: $grid-gutter;
+      margin-#{$side}: $gutter;
+      @include mq($ph) {
+        margin-#{$side}: $gutter;
+      }
+    } @else {
+      margin-#{$side}: $gutter;
+      @include mq($ph) {
+        margin-#{$side}: ($gutter * -1);
+      }
     }
   } @else {
     @if ($minus == false) {
-      margin-#{$side}: ($grid-gutter / 2);
+      margin-#{$side}: ($gutter / 2);
+      @include mq($ph) {
+        margin-#{$side}: ($gutter / 2);
+      }
     } @else {
-      margin-#{$side}: (($grid-gutter / 2) * -1);
+      margin-#{$side}: (($gutter / 2) * -1);
+      @include mq($ph) {
+        margin-#{$side}: (($gutter / 2) * -1);
+      }
     }
   }
 }
 
-// Pass in "right, left, top or bottom" to add consistent padding; pass in 'half' to halve the padding.
+//// Pass in "right, left, top or bottom" to add consistent padding; pass in 'half' to halve the padding.
 @mixin padding-gutter($side: bottom, $half: false) {
   @if ($half == false) {
-    padding-#{$side}: $grid-gutter;
+    padding-#{$side}: $gutter;
   } @else {
-    padding-#{$side}: ($grid-gutter / 2);
+    padding-#{$side}: ($gutter / 2);
   }
 }
 

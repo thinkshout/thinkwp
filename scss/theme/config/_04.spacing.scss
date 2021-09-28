@@ -1,0 +1,99 @@
+$sizes: (
+  'zero': 0,
+  '2xs': $spacer-2xs,
+  'xs': $spacer-xs,
+  'sm': $spacer-sm,
+  'md': $spacer-md,
+  'lg': $spacer-lg,
+  'xl': $spacer-xl,
+  '2xl': $spacer-2xl,
+  '3xl': $spacer-3xl,
+  '4xl': $spacer-4xl,
+  'auto': 'auto',
+);
+
+$mobileSizes: (
+  'md': $spacer-sm,
+  'lg': $spacer-md,
+  'xl': $spacer-lg,
+  '2xl': $spacer-xl,
+  '3xl': $spacer-2xl,
+  '4xl': $spacer-3xl,
+);
+
+$directions: (
+  't': '-top',
+  'r': '-right',
+  'b': '-bottom',
+  'l': '-left',
+  '': '',
+);
+
+// Mobile sizes: Margin and padding
+@media(max-width: $md) {
+  @each $sizename, $size in $mobileSizes {
+    @each $directionname, $direction in $directions {
+      //Creates margin classes one size smaller on mobile
+      .m#{$directionname}-#{$sizename} {
+        margin#{$direction}: $size;
+      }
+      //Creates padding classes one size smaller on mobile
+      .p#{$directionname}-#{$sizename} {
+        padding#{$direction}: $size;
+      }
+    }
+  }
+}
+
+// Padding and Margin classes for all directions .[m or p][direction]-[size]
+// Directions: t / b / l / r / x / y
+// Sizes: 4xs / 3xs / 2xs / xs / sm / md / lg / xl / 2xl / 3xl / 3xl / zero / auto
+@each $sizename, $size in $sizes {
+
+  @each $directionname, $direction in $directions {
+    .m#{$directionname}-#{$sizename} {
+      margin#{$direction}: $size;
+    }
+    .p#{$directionname}-#{$sizename} {
+      padding#{$direction}: $size;
+    }
+  }
+
+  // X = left & right, Y = top & bottom
+  .mx-#{$sizename} {
+    margin-right: $size;
+    margin-left: $size;
+  }
+  .my-#{$sizename} {
+    margin-top: $size;
+    margin-bottom: $size;
+  }
+  .px-#{$sizename} {
+    padding-right: $size;
+    padding-left: $size;
+  }
+  .py-#{$sizename} {
+    padding-top: $size;
+    padding-bottom: $size;
+  }
+}
+
+.m-zero-auto {
+  margin: 0 auto;
+}
+
+//Components
+.p-card {
+  padding: $spacer-sm $spacer-sm;
+
+  @include mq(md) {
+    padding: $spacer-md $spacer-md;
+  }
+}
+
+.m-card {
+  margin-bottom: $spacer-md;
+  @include mq(md) {
+    margin-bottom: $spacer-xl;
+  }
+}
