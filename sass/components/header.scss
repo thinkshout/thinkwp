@@ -1,55 +1,34 @@
 /* Global Header Nav styles go here */
 .site-header {
   padding: rem(14px) rem(20px);
-  position: relative;
-  z-index: 50;
   .main-navigation {
-    display: flex;
-    flex-direction: row;
     .menu-toggle {
-      display: block;
       padding-top: rem(5px);
-      @include mq(lg) {
-        display: none;
-      }
     }
     .menu {
-      display: none;
+      @apply hidden;
       .menu-link {
-        display: block;
-        text-decoration: none;
-        transition: color 0.25s ease;
-        cursor: pointer;
         padding: rem(15px) 0;
+        @apply block no-underline transition-all cursor-pointer;
         @include mq(lg) {
-          padding: 0 0;
+          @apply p-0;
         }
       }
       .menu-item {
         &.menu-item-has-children {
-          position: relative;
+          @apply relative;
           > .menu-link {
             &:after {
               content: url("/assets/svg/MenuChevron.svg");
-              display: inline-block;
               width: rem(10px);
-              position: relative;
               top: rem(-1px);
               margin-left: rem(5px);
-              transform: rotate(0deg);
-              transition: transform 0.25s ease;
+              @apply inline-block relative transition-transform rotate-0;
             }
           }
         }
         .sub-menu {
-          visibility: hidden;
-          opacity: 0;
-          max-height: 0;
-          transition: all 0.3s ease;
-          flex-direction: column;
-          min-width: 100%;
-          padding: 0;
-          z-index: 9;
+          @apply invisible opacity-0 max-h-0 transition-all flex-col min-w-full p-0 z-10;
           > li {
             padding: 0;
             top: 0;
@@ -137,30 +116,17 @@
   }
   .site-branding {
     width: rem(72px);
-    position: relative;
-    opacity: 1;
-    visibility: visible;
-    a {
-      position: absolute;
-      width: 100%;
-    }
     @include mq(lg) {
       width: rem(115px);
     }
   }
   .menu-toggle {
     margin-left: 13px;
-    position: relative;
     &__sandwich-layer {
       border-radius: 2px;
-      background-color: $color-black;
       height: 3px;
-      left: 0;
-      top: 0;
       width: 38px;
       margin: 5px 0;
-      display: block;
-      position: relative;
       transition: transform 0.25s ease, opacity 0.25s ease,
         visibility 0.25s ease, background-color 0.25s ease, left 0.25s ease,
         top 0.25s ease;

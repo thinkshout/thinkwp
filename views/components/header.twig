@@ -1,7 +1,7 @@
-<header id="masthead" class="site-header">
-  <nav id="site-navigation" class="main-navigation">
-    <div class="site-branding site-title">
-      <a href="{{ function('home_url', '/') }}" rel="home">
+<header id="masthead" class="site-header z-50 relative">
+  <nav id="site-navigation" class="main-navigation flex flex-row">
+    <div class="site-branding site-title relative opacity-100 visible">
+      <a href="{{ function('home_url', '/') }}" rel="home" class="absolute w-full">
         <img src="{{ site_logo }}" alt="Site Logo" />
         <span class="screen-reader-text">{{ site.name }}</span>
         <span class="screen-reader-text site-description">
@@ -18,12 +18,12 @@
     %}
 
     {% endembed %}
-    <button class="menu-toggle btn reset"
+    <button class="menu-toggle btn reset relative block lg:hidden"
       aria-controls="{{ header_menu.slug }}"
       aria-expanded="false">
-      <span class="menu-toggle__sandwich-layer"></span>
-      <span class="menu-toggle__sandwich-layer"></span>
-      <span class="menu-toggle__sandwich-layer"></span>
+      <span class="menu-toggle__sandwich-layer bg-black left-0 top-0 block relative"></span>
+      <span class="menu-toggle__sandwich-layer bg-black left-0 top-0 block relative"></span>
+      <span class="menu-toggle__sandwich-layer bg-black left-0 top-0 block relative"></span>
       <span class="screen-reader-text">
         Toggle {{ __(header_menu.name, 'thinkwp') }}
       </span>

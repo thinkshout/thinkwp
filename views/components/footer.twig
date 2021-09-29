@@ -21,12 +21,12 @@
         </div>
       </div>
       <!-- .flex-grid -->
-      <div class="footer-content__copyright">
-        <p>
+      <div class="footer-content__copyright flex flex-row flex-wrap lg:justify-end">
+        <p class="inline-block mt-0 lg:mr-xs lg:mb-0 lh:relative">
           &copy; {{ 'now'|date('Y') }} Site
         </p>
-        <div class="spacer"></div>
-        <nav class="footer-nav-copy">
+        <div class="spacer lg:hidden"></div>
+        <nav class="footer-nav-copy inline-block mt-0">
           {% include 'components/menu.twig' with {
             menu: footer_copy
           } %}

@@ -32,8 +32,8 @@
     "start:dev": "webpack --watch --mode development",
     "tokens": "style-dictionary build --config style-dictionary.config.json",
     "prettier": "prettier --write sass/**/*.scss js/**/*.js",
-    "tw.build": "NODE_ENV=production tailwindcss -i ./sass/tailwind.css -o ./dist/tailwind.css --minify",
-    "tw.dev": "NODE_ENV=development tailwindcss -i ./sass/tailwind.css -o ./dist/tailwind.css --watch"
+    "tw.build": "NODE_ENV=production tailwindcss -i ./sass/style.scss -o ./dist/main.css --minify",
+    "tw.dev": "NODE_ENV=development tailwindcss -i ./sass/style.scss -o ./dist/main.css --watch"
   },
   "author": "ThinkShout, Inc",
   "license": "GPL-3.0",

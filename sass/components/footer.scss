@@ -14,15 +14,15 @@
     &__nav {
       .menu {
         .menu-link {
-          text-decoration: none;
+          @apply no-underline;
           @include hocus {
-            text-decoration: underline;
+            @apply underline;
           }
         }
         .sub-menu {
           .menu-item {
-            display: block;
             margin: rem(10) 0;
+            @apply block;
           }
         }
         &#footer-column-1 {
@@ -31,8 +31,8 @@
         &#footer-column-2 {
           margin-bottom: rem(46);
           .menu-item {
-            display: block;
             margin: 0 0 rem(28);
+            @apply block;
           }
         }
       }
@@ -59,42 +59,27 @@
       }
     }
     &__copyright {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      p,
-      nav,
       .menu-link {
-        display: inline-block;
-        margin-top: 0;
+        @apply inline-block mt-0;
       }
       .menu {
         .menu-item {
-          display: inline-block;
-          margin: 0;
+          @apply inline-block mt-0;
           &:not(:last-child) {
             &:after {
               content: "|";
-              display: inline-block;
               margin: 0 5px;
-              position: relative;
               top: 2px;
+              @apply inline-block relative;
             }
           }
         }
         .menu-link {
-          text-decoration: none;
+          @apply no-underline;
         }
       }
       @include mq(lg) {
-        justify-content: flex-end;
-        .spacer {
-          display: none;
-        }
         p {
-          margin-right: rem(16);
-          margin-bottom: 0;
-          position: relative;
           top: rem(6px);
         }
       }

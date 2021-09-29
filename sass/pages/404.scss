@@ -2,13 +2,10 @@
   .container__inner {
     &:after {
       content: "404";
-      color: $color-gray-dk;
       left: 50%;
       transform: translateX(-50%);
-      opacity: 0.5;
-      position: absolute;
       top: 50%;
-      z-index: 0;
+      @apply text-gray-dk opacity-50 absolute z-0;
     }
   }
 }

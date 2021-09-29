@@ -3,7 +3,7 @@ const tokens = require('./tailwind-tokens.json');
 module.exports = {
   mode: 'jit',
   darkMode: 'media', // or 'media' or 'class'
-  prefix: 'ts',
+  prefix: '',
   purge: [
     './views/**/*.{html,twig}',
     './js/**/*.js',

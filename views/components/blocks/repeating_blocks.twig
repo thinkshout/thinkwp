@@ -1,17 +1,17 @@
-<div class="repeating-blocks">
-  <div class="container--content">
+<div class="repeating-blocks relative">
+  <div class="container--content relative">
     {% for repeating_block in flexible_block.blocks %}
-    <div class="repeating-blocks__block{% if not repeating_block.block_image %} repeating-blocks__block--no-image{% endif %}">
-      <div class="flex-grid">
+    <div class="repeating-blocks__block relative{% if not repeating_block.block_image %} repeating-blocks__block--no-image{% endif %}">
+      <div class="flex-grid relative">
         <div class="grid-1of1 grid-1of3--lg{% if loop.index is even %} grid-push-2of3--lg{% endif %}">
-          <div class="repeating-blocks__image">
-            <img src="{{ repeating_block.block_image.url }}" alt="{{ repeating_block.block_image.alt }}" />
+          <div class="repeating-blocks__image lg:p-0">
+            <img class="w-full" src="{{ repeating_block.block_image.url }}" alt="{{ repeating_block.block_image.alt }}" />
           </div>
         </div>
         <div class="grid-1of1 grid-2of3--lg{% if loop.index is even %} grid-pull-1of3--lg{% endif %}">
-          <div class="repeating-blocks__content">
-            <h2>{{ repeating_block.block_title }}</h2>
-            <p>{{ repeating_block.block_text }}</p>
+          <div class="repeating-blocks__content p-sm lg:relative lg:top-1/2">
+            <h2 class="h2 mt-0 mb-0">{{ repeating_block.block_title }}</h2>
+            <p class="mt-0">{{ repeating_block.block_text }}</p>
             {% include 'components/link.twig' with { link: repeating_block.block_link, link_classes: 'btn no-texture' } %}
           </div>
         </div>
