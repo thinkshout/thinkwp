@@ -20,10 +20,11 @@
     "postcss-nested": "^5.0.6",
     "postcss-preset-env": "^7.4.3",
     "prettier": "^2.4.1",
-    "prettier-plugin-tailwindcss": "^0.1.8",
+    "prettier-plugin-tailwindcss": "^0.2.1",
+    "prettier-plugin-twig-enhancements": "^1.0.1",
     "prettier-plugin-twig-melody": "^0.4.6",
     "style-dictionary": "^3.1.1",
-    "tailwindcss": "^3.0.5"
+    "tailwindcss": "^3.2.4"
   },
   "scripts": {
     "build": "concurrently -c \"magenta,blue\" \"npm:theme.bundle.prod\" \"npm:theme.bundle.admin\"",
@@ -31,7 +32,7 @@
     "format.assets": "eslint assets --fix && prettier --write assets",
     "format.tokens": "style-dictionary build --config style-dictionary.config.js",
     "preinstall": "npx check-node-version --node $(cat .nvmrc)",
-    "prettier": "prettier --write css/**/*.css js/**/*.js",
+    "prettier": "prettier --write assets",
     "start": "npm run theme.watch",
     "theme.bundle.dev": "NODE_ENV=development parcel build ./assets/motif.js --dist-dir ./dist --public-url ./dist",
     "theme.bundle.prod": "NODE_ENV=production parcel build ./assets/motif.js --dist-dir ./dist --public-url ./dist",
