@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme Customizer
+ * thinkwp Theme Customizer
  *
  * @package thinkwp
  */
@@ -56,6 +56,6 @@ function thinkwp_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function thinkwp_customize_preview_js() {
-	wp_enqueue_script( 'thinkwp-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+	wp_enqueue_script( 'thinkwp-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), _S_VERSION, true );
 }
 add_action( 'customize_preview_init', 'thinkwp_customize_preview_js' );
