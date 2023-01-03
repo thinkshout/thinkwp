@@ -32,7 +32,7 @@ cd my_theme_name
 
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload Theme and Choose File, then select the theme's .zip file.
-Click Install Now.
+   Click Install Now.
 3. Click Activate to use your new theme right away.
 
 ## Development
@@ -74,6 +74,6 @@ npm run build:dev
 ## Credits
 
 - Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.,
-[GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+  [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 - normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016
-Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+  Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)

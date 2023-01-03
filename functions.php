@@ -1,100 +1,105 @@
 <?php
 /**
- * Theme functions and definitions
+ * thinkwp functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package thinkwp
  */
 
-if ( ! function_exists( 'thinkwp_setup' ) ) :
+if ( ! defined( '_S_VERSION' ) ) {
+	// Replace the version number of the theme on each release.
+	define( '_S_VERSION', '1.0.1' );
+}
+
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which
+ * runs before the init hook. The init hook is too late for some features, such
+ * as indicating support for post thumbnails.
+ */
+function thinkwp_setup() {
+	/*
+		* Make theme available for translation.
+		* Translations can be filed in the /languages/ directory.
+		* If you're building a theme based on thinkwp, use a find and replace
+		* to change 'thinkwp' to the name of your theme in all the template files.
+		*/
+	load_theme_textdomain( 'thinkwp', get_template_directory() . '/languages' );
+
+	// Add default posts and comments RSS feed links to head.
+	add_theme_support( 'automatic-feed-links' );
+
+	/*
+		* Let WordPress manage the document title.
+		* By adding theme support, we declare that this theme does not use a
+		* hard-coded <title> tag in the document head, and expect WordPress to
+		* provide it for us.
+		*/
+	add_theme_support( 'title-tag' );
+
+	/*
+		* Enable support for Post Thumbnails on posts and pages.
+		*
+		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		*/
+	add_theme_support( 'post-thumbnails' );
+
+	// This theme uses wp_nav_menu() in one location.
+	register_nav_menus(
+		array(
+			'menu-1' => esc_html__( 'Primary', 'thinkwp' ),
+		)
+	);
+
+	/*
+		* Switch default core markup for search form, comment form, and comments
+		* to output valid HTML5.
+		*/
+	add_theme_support(
+		'html5',
+		array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+			'style',
+			'script',
+		)
+	);
+
+	// Set up the WordPress core custom background feature.
+	add_theme_support(
+		'custom-background',
+		apply_filters(
+			'thinkwp_custom_background_args',
+			array(
+				'default-color' => 'ffffff',
+				'default-image' => '',
+			)
+		)
+	);
+
+	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
 	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
+	 * Add support for core custom logo.
 	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which
-	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
+	 * @link https://codex.wordpress.org/Theme_Logo
 	 */
-	function thinkwp_setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on thinkwp, use a find and replace
-		 * to change 'thinkwp' to the name of your theme in all the template files.
-		 */
-		load_theme_textdomain( 'thinkwp', get_template_directory() . '/languages' );
-
-		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
-
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
-		add_theme_support( 'title-tag' );
-
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
-		add_theme_support( 'post-thumbnails' );
-
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus(
-			array(
-				'menu-1' => esc_html__( 'Primary', 'thinkwp' ),
-			)
-		);
-
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
-		add_theme_support(
-			'html5',
-			array(
-				'search-form',
-				'comment-form',
-				'comment-list',
-				'gallery',
-				'caption',
-			)
-		);
-
-		// Set up the WordPress core custom background feature.
-		add_theme_support(
-			'custom-background',
-			apply_filters(
-				'thinkwp_custom_background_args',
-				array(
-					'default-color' => 'ffffff',
-					'default-image' => '',
-				)
-			)
-		);
-
-		// Add theme support for selective refresh for widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
-
-		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
-		add_theme_support(
-			'custom-logo',
-			array(
-				'height'      => 250,
-				'width'       => 250,
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
-		);
-	}
-endif;
+	add_theme_support(
+		'custom-logo',
+		array(
+			'height'      => 250,
+			'width'       => 250,
+			'flex-width'  => true,
+			'flex-height' => true,
+		)
+	);
+}
 add_action( 'after_setup_theme', 'thinkwp_setup' );
 
 /**
@@ -136,25 +141,24 @@ add_action( 'widgets_init', 'thinkwp_widgets_init' );
  * Enqueue scripts and styles.
  */
 function thinkwp_scripts() {
-	$ver = '20151215';
-	$dir = 'dist';
-	if ( file_exists( __DIR__ . '/dist_dev' ) ) {
-		$dir = 'dist_dev';
-	}
+  $dir = 'dist';
+  if ( file_exists( __DIR__ . '/dist_dev' ) ) {
+    $dir = 'dist_dev';
+  }
 
-	wp_enqueue_style( 'thinkwp-styles', get_template_directory_uri() . "/$dir/main.css", [], $ver );
-	wp_enqueue_script( 'thinkwp-scripts', get_template_directory_uri() . "/$dir/main.min.js", [ 'jquery' ], $ver, true );
+	wp_enqueue_style( 'thinkwp-styles', get_template_directory_uri() . "/$dir/main.css", [], _S_VERSION );
+	wp_enqueue_script( 'thinkwp-scripts', get_template_directory_uri() . "/$dir/main.min.js", [ 'jquery' ], _S_VERSION, true );
 
 	wp_localize_script( 'thinkwp-scripts', 'thinkwp', array(
 		'themeBase' => get_theme_file_uri(),
 		'ajaxUrl'   => admin_url( 'admin-ajax.php' ),
 	) );
-	
-	wp_enqueue_script( 'thinkwp-navigation', get_template_directory_uri() . '/js/navigation.js', [], $ver, true );
 
-	wp_enqueue_script( 'thinkwp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', [], $ver, true );
+	wp_enqueue_script( 'thinkwp-navigation', get_template_directory_uri() . '/js/navigation.js', [], _S_VERSION, true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+  wp_enqueue_script( 'thinkwp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', [], _S_VERSION, true );
+
+  if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }

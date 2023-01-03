@@ -21,8 +21,9 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'thinkwp' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'thinkwp' ); ?></a>
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
@@ -40,7 +41,7 @@
 			$thinkwp_description = get_bloginfo( 'description', 'display' );
 			if ( $thinkwp_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $thinkwp_description; /* WPCS: xss ok. */ ?></p>
+				<p class="site-description"><?php echo $thinkwp_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
@@ -56,5 +57,3 @@
 			?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">

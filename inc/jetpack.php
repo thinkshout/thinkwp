@@ -41,25 +41,27 @@ function thinkwp_jetpack_setup() {
 				'comment'    => '.comments-link',
 			),
 			'featured-images' => array(
-				'archive'    => true,
-				'post'       => true,
-				'page'       => true,
+				'archive' => true,
+				'post'    => true,
+				'page'    => true,
 			),
 		)
 	);
 }
 add_action( 'after_setup_theme', 'thinkwp_jetpack_setup' );
 
-/**
- * Custom render function for Infinite Scroll.
- */
-function thinkwp_infinite_scroll_render() {
-	while ( have_posts() ) {
-		the_post();
-		if ( is_search() ) :
-			get_template_part( 'template-parts/content', 'search' );
-		else :
-			get_template_part( 'template-parts/content', get_post_type() );
-		endif;
+if ( ! function_exists( 'thinkwp_infinite_scroll_render' ) ) :
+	/**
+	 * Custom render function for Infinite Scroll.
+	 */
+	function thinkwp_infinite_scroll_render() {
+		while ( have_posts() ) {
+			the_post();
+			if ( is_search() ) :
+				get_template_part( 'template-parts/content', 'search' );
+			else :
+				get_template_part( 'template-parts/content', get_post_type() );
+			endif;
+		}
 	}
-}
+endif;
