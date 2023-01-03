@@ -13,7 +13,7 @@
     "eslint-config-prettier": "^8.3.0",
     "find-config": "^1.0.0",
     "parcel": "^2.0.0",
-    "postcss": "^8.3.8",
+    "postcss": "^7.0.36",
     "postcss-custom-properties": "^12.1.10",
     "postcss-import": "^14.0.2",
     "postcss-loader": "^4.0.0",
