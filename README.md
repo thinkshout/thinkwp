@@ -1,3 +1,6 @@
+# Deprecated
+This repo should not be used for spinning up new WP sites. It's been replaced by https://github.com/thinkshout/thinkwp-starter-theme
+
 # thinkwp
 
 Contributors: ThinkShout Inc., Automattic
